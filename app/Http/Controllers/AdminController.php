@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Comment;
 use Illuminate\Http\Request;
 use App\Country;
 
@@ -12,7 +13,8 @@ class AdminController extends Controller
     {
         $countries = Country::all();
         $categories = Category::all();
-        return view('admin.dashboard',compact('countries'),compact('categories'));
+        $comments = Comment::all();
+        return view('admin.dashboard',compact('countries', 'categories', 'comments'));
     }
 
 
@@ -33,12 +35,23 @@ class AdminController extends Controller
             $file = $request->flag;
             //$extension = $file->getClientOriginalExtension(); // getting image extension
             $filename = time() . '.' . $file;
-            $file->move('uploads/', $filename);
+            $request->flag->move('uploads/img.png');
 
             $country->country = $request->country;
             $country->flag = 'uploads/' . $filename;
             $country->save();
         }
-        return $extension;
+        return $request->flag;
+    }
+
+    public function commentStatus($comment_id)
+    {
+        $comment = Comment::find($comment_id);
+        if($comment->status == "passive")
+            $comment->status = "active";
+        else
+            $comment->status = "passive";
+        $comment->save();
+        return back();
     }
 }

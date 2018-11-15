@@ -53,4 +53,5 @@ Route::group(['prefix'=>'admin'],function(){
     route::get('/','AdminController@index')->name('admin');
     route::post('/storecountry','AdminController@storeCountry')->name('storeCountry');
     route::post('/storecategory','AdminController@storeCategory')->name('storeCategory');
+    route::put('/{comment_id}/status','AdminController@commentStatus')->name('commentStatus');
 });

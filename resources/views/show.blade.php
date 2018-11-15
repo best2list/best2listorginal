@@ -35,7 +35,9 @@
             </div>
             <hr/>
             @foreach($business->comments as $comment)
-                <strong>{{ $comment->hasUsername($comment->user_id) }} : </strong>{{ $comment->comment }}<hr/>
+                @if($comment->status == "active")
+                    <strong>{{ $comment->hasUsername($comment->user_id) }} : </strong>{{ $comment->comment }}<hr/>
+                @endif
             @endforeach
 
             @auth
