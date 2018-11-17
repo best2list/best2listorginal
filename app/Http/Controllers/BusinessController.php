@@ -54,6 +54,13 @@ class BusinessController extends Controller
         $business->type = $request->type;
         $business->country = $request->country;
         $business->parent_id = $request->parent_id;
+        if($request->file('image_path')) {
+            $image = $request->file('image_path');
+            $newPath = '/images/business/ ' . date('Y') . "/" . date('m') . "/" . date('d')."/";
+            $newName = date('Y_m_d_H_i_s') .'_'. Auth::user()->username.'.'. $image->getClientOriginalExtension();
+            $image->move($newPath, $newName);
+            $business->image_path = $newPath.$newName;
+        }
         $business->save();
         $business->categories()->sync($request->categories);
         return redirect()->route('index');
