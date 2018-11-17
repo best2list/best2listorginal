@@ -46,6 +46,7 @@ Route::group(['prefix'=>'mybusiness'],function(){
     Route::get('/{business_id}/edit','BusinessController@edit')->name('edit');
     Route::get('/{business_id}','BusinessController@show')->name('show');
     Route::put('/{business_id}','BusinessController@update')->name('update');
+    Route::post('/{business_id}/imageupload','BusinessController@businessImageUpload')->name('businessImageUpload');
     Route::delete('/{business_id}','BusinessController@destroy')->name('destroy');
     Route::put('/{business_id}/status','BusinessController@businessStatus')->name('businessStatus');
 });

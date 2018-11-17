@@ -9,6 +9,35 @@
                     <div class="card-header">create business</div>
 
                     <div class="card-body">
+                        @foreach($businessImages as $businessImage)
+                            <img class="col-md-4" src="{{$businessImage->image_path}}" alt="business image">
+
+                            <hr/>
+                        @endforeach
+                        <form method="POST" action="{{route('businessImageUpload',$business->id)}}" aria-label="{{ __('uploadimage') }}" enctype="multipart/form-data">
+                            @csrf
+                            <div class="form-group row">
+                                <label for="businessUploadImage" class="col-sm-4 col-form-label text-md-right">{{ __('business Upload Image') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="businessUploadImage" type="file" class="form-control{{ $errors->has('businessUploadImage') ? ' is-invalid' : '' }}" name="businessUploadImage" autofocus required>
+                                    @if ($errors->has('businessUploadImage'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('businessUploadImage') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('insert') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <hr/>
                         <form method="POST" action="../../{{ $business->id }}" aria-label="{{ __('update') }}">
                             @csrf
                             {{ method_field('put') }}

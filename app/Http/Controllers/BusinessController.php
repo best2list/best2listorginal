@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Business;
+use App\BusinessImage;
 use App\Category;
 use App\Country;
 use Illuminate\Http\Request;
@@ -72,7 +73,8 @@ class BusinessController extends Controller
         $businesses = Business::all()->where('user_id',Auth::id());
         $categories = Category::all();
         $countries = Country::all();
-        return view('business.edit', compact('business', 'businesses', 'categories','countries'));
+        $businessImages = BusinessImage::where('business_id', $business_id)->get();
+        return view('business.edit', compact('business', 'businesses', 'categories','countries', 'businessImages'));
     }
 
     public function update($business_id, Request $request)
@@ -114,5 +116,20 @@ class BusinessController extends Controller
             $business->type='passive';
         $business->save();
         return redirect()->route('index');
+    }
+
+    public function businessImageUpload($id, Request $request)
+    {
+        if($request->file('businessUploadImage')) {
+            $image = $request->file('businessUploadImage');
+            $newPath = 'images/businessImages/'.date('Y')."/".date('m')."/".date('d')."/";
+            $newName = date('Y_m_d_H_i_s').'_'.$id.'.'.$image->getClientOriginalExtension();
+            $image->move($newPath, $newName);
+            $business_image = new BusinessImage;
+            $business_image->business_id = $id;
+            $business_image->image_path = '/'.$newPath . $newName;
+            $business_image->save();
+        }
+        return back();
     }
 }
