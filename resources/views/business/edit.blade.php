@@ -36,7 +36,7 @@
 
                         @foreach($businessImages as $businessImage)
                             <img class="col-md-4" src="{{$businessImage->image_path}}" alt="business image">
-                            <form action="{{ route('businessImageUpload',$business->id) }}" method="post">
+                            <form action="{{ route('businessImageUpload',$business->id) }}" method="post" >
                                 @csrf
                                 {{method_field('delete')}}
                                 <input type="submit" value="delete" class="btn btn-danger"/>
@@ -44,7 +44,7 @@
                             <hr/>
                         @endforeach
 
-                        <form method="POST" action="../../{{ $business->id }}" aria-label="{{ __('update') }}">
+                        <form method="POST" action="{{ route('update', $business->id) }}" aria-label="{{ __('update') }}" enctype="multipart/form-data">
                             @csrf
                             {{ method_field('put') }}
                             <div class="form-group row">
@@ -259,6 +259,21 @@
                                     @endif
                                 </div>
                             </div>
+                            <img src="/{{ $business->image_path }}" alt="logo" class="col-md-2 offset-4">
+
+                            <div class="form-group row">
+                                <label for="image_path" class="col-sm-4 col-form-label text-md-right">{{ __('business image') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="image_path" type="file" class="form-control{{ $errors->has('image_path') ? ' is-invalid' : '' }}" name="image_path" autofocus>
+                                    @if ($errors->has('image_path'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('image_path') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
 
                             <div class="form-group row">
                                 <label for="categories" class="col-sm-4 col-form-label text-md-right">{{ __('categories') }}</label>
