@@ -9,7 +9,7 @@
                     <div class="card-header">create business</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('store') }}" aria-label="{{ __('store') }}">
+                        <form method="POST" action="{{ route('store') }}" aria-label="{{ __('store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label for="title" class="col-sm-4 col-form-label text-md-right">{{ __('title') }}</label>
@@ -216,6 +216,19 @@
                                     @if ($errors->has('parent_id'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('parent_id') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="image_path" class="col-sm-4 col-form-label text-md-right">{{ __('business image') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="image_path" type="file" class="form-control{{ $errors->has('image_path') ? ' is-invalid' : '' }}" name="image_path" autofocus>
+                                    @if ($errors->has('image_path'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('image_path') }}</strong>
                                     </span>
                                     @endif
                                 </div>
