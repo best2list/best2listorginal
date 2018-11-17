@@ -23,7 +23,7 @@ class AppServiceProvider extends ServiceProvider
         //Blade::directive('layouts.app')->with('countries',$countries);
         view()->composer('layouts.app', function ($view) {
             $view->with('countries', Country::all());
-            $view->with('categories', Category::all());
+            $view->with('categories', Category::with('children')->whereNull('parent_id')->orderBy('title', 'asc')->get());
         });
 //
 //        view()->composer('*', function($view) {

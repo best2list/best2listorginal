@@ -98,8 +98,16 @@
                                 <div class="card-header">categories</div>
                                 <div class="card-body">
                                     <ul>
-                                        @foreach($categories as $category)
-                                            <li><a href="/category/{{ $category->id }}">{{ $category->title }}</a> </li>
+                                        @foreach ($categories as $parent)
+                                            <li><a href="category/{{ $parent->id }}">{{ $parent->title }}</a>
+                                                @if ($parent->children->count())
+                                                    <ul>
+                                                        @foreach ($parent->children as $child)
+                                                            <li><a href="category/{{ $child->id }}">{{ $child->title }}</a></li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
+                                            </li>
                                         @endforeach
                                     </ul>
                                 </div>

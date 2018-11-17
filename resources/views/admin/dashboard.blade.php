@@ -86,6 +86,7 @@
 
                                         <li><a href="/admin/categories">categories</a> </li>
                                         <li><a href="/admin/countries">countries</a> </li>
+                                        <li><a href="/admin/comments">comments</a> </li>
 
                                 </ul>
                             </div>
@@ -119,7 +120,7 @@
                     <br/>
 
                     <div class="card">
-                        <div class="card-header">create business</div>
+                        <div class="card-header">create country</div>
 
                         <div class="card-body">
                             <form method="POST" action="{{ route('storeCountry') }}" aria-label="{{ __('storeCountry') }}">
@@ -189,7 +190,7 @@
                     <br/>
 
                     <div class="card">
-                        <div class="card-header">create business</div>
+                        <div class="card-header">create category</div>
 
                         <div class="card-body">
                             <form method="POST" action="{{ route('storeCategory') }}" aria-label="{{ __('storeCategory') }}">
@@ -270,7 +271,8 @@
 
             </div>
         </div>
-        </div>
+            </div>
+    </div>
     </main>
 </div>
 </body>
