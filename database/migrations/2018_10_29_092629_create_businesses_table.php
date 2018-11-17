@@ -31,7 +31,7 @@ class CreateBusinessesTable extends Migration
             $table->boolean('status', ['passive', 'active']);
             $table->unsignedInteger('country');
             $table->unsignedInteger('parent_id')->nullable();
-
+            $table->string('image_path', 300)->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
