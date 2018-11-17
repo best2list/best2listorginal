@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BusinessImage;
 use App\Category;
 use App\Comment;
 use App\Country;
@@ -44,7 +45,8 @@ class HomeController extends Controller
     public function showBusiness($id)
     {
         $business = Business::find($id);
-        return view('show', compact('business'));
+        $businessImages = BusinessImage::where('business_id', $id)->get();
+        return view('show', compact('business','businessImages'));
     }
 
     public function addComment(Request $request, $id)

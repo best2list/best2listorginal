@@ -15,6 +15,10 @@
             <div class="bg-white rounded-0  p-3">
                 <i class="fas fa-bullhorn"></i> <strong>description</strong> : {{ $business->description }}
             </div>
+            @foreach($businessImages as $businessImage)
+                <img class="col-md-3" src="{{$businessImage->image_path}}" alt="business image">
+                <hr/>
+            @endforeach
             <div class="bg-white  p-3">
                 <div class="p-2 m-0">
                     <span class=""><i class="fas fa-envelope"></i> <strong>email</strong> : <span class="rounded bg-light p-1">{{ $business->email }}</span></span>

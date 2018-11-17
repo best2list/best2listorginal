@@ -9,11 +9,6 @@
                     <div class="card-header">create business</div>
 
                     <div class="card-body">
-                        @foreach($businessImages as $businessImage)
-                            <img class="col-md-4" src="{{$businessImage->image_path}}" alt="business image">
-
-                            <hr/>
-                        @endforeach
                         <form method="POST" action="{{route('businessImageUpload',$business->id)}}" aria-label="{{ __('uploadimage') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
@@ -38,6 +33,17 @@
                             </div>
                         </form>
                         <hr/>
+
+                        @foreach($businessImages as $businessImage)
+                            <img class="col-md-4" src="{{$businessImage->image_path}}" alt="business image">
+                            <form action="{{ route('businessImageUpload',$business->id) }}" method="post">
+                                @csrf
+                                {{method_field('delete')}}
+                                <input type="submit" value="delete" class="btn btn-danger"/>
+                            </form>
+                            <hr/>
+                        @endforeach
+
                         <form method="POST" action="../../{{ $business->id }}" aria-label="{{ __('update') }}">
                             @csrf
                             {{ method_field('put') }}
