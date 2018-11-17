@@ -31,17 +31,20 @@ class AdminController extends Controller
     public function storeCountry(Request $request)
     {
         $country = new Country();
-        if($request->flag) {
-            $file = $request->flag;
-            //$extension = $file->getClientOriginalExtension(); // getting image extension
-            $filename = time() . '.' . $file;
-            $request->flag->move('uploads/img.png');
+        if($request->file('flag')) {
+            $flag = $request->file('flag');
+            $newName =date('Y_m_d_H_i_s').'_'.$request->country.".".$flag->getClientOriginalExtension();
+            $newpath = 'images/country/';
+            $flag->move($newpath, $newName);
 
             $country->country = $request->country;
-            $country->flag = 'uploads/' . $filename;
+            $country->flag = $newpath.$newName;
             $country->save();
         }
-        return $request->flag;
+        else{
+            return $request->file('flag');
+        }
+        return back();
     }
 
     public function commentStatus($comment_id)

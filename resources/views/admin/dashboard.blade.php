@@ -101,7 +101,7 @@
                             <tr class="table-active">
                                 <td>country ID</td>
                                 <td>country name</td>
-                                <td>url</td>
+                                <td>flag</td>
                                 <td>edit</td>
                                 <td>delete</td>
                             </tr>
@@ -109,7 +109,7 @@
                                 <tr>
                                     <td>{{ $country->id }}</td>
                                     <td>{{ $country->country }}</td>
-                                    <td>{{ $country->flag }}</td>
+                                    <td><img class="col-md-3" src="{{ $country->flag }}" alt="{{$country->country}}"></td>
                                     <td><a href="">edit</a> </td>
                                     <td><a href="">delete</a> </td>
                                 </tr>
@@ -123,7 +123,7 @@
                         <div class="card-header">create country</div>
 
                         <div class="card-body">
-                            <form method="POST" action="{{ route('storeCountry') }}" aria-label="{{ __('storeCountry') }}">
+                            <form method="POST" action="{{ route('storeCountry') }}" aria-label="{{ __('storeCountry') }}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label for="country" class="col-sm-4 col-form-label text-md-right">{{ __('country') }}</label>
