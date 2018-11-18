@@ -6,7 +6,7 @@
 @section('content')
 
                 <div class="card">
-                    <div class="card-header">{{ $business->title}}</div>
+                   
 
                     <div class="card-body">
                         <div>{{ $business->summary }} </div>

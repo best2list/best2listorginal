@@ -29,4 +29,10 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function favorites()
+    {
+        return $this->hasMany('App\Favorites');
+    }
+
 }

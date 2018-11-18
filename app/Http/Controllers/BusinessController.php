@@ -6,6 +6,8 @@ use App\Business;
 use App\BusinessImage;
 use App\Category;
 use App\Country;
+use App\User;
+use App\Favorites;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use function Sodium\crypto_box_publickey_from_secretkey;
@@ -144,20 +146,17 @@ class BusinessController extends Controller
 
     public function businessImageDestroy($business_image_id, Request $request)
     {
-
-//        if($request->file('businessImage')) {
-//            $image = $request->file('businessUploadImage');
-//            $newPath = 'images/businessImages/'.date('Y')."/".date('m')."/".date('d')."/";
-//            $newName = date('Y_m_d_H_i_s').'_'.$id.'.'.$image->getClientOriginalExtension();
-//            $image->move($newPath, $newName);
-//            $business_image = new BusinessImage;
-//            $business_image->business_id = $id;
-//            $business_image->image_path = '/'.$newPath . $newName;
-//            $business_image->save();
-//        }
         $business_image = BusinessImage::find($business_image_id);
         unlink(public_path($business_image->image_path));
         $business_image->delete();
         return back();
+    }
+
+    public function showFavorite()
+    {
+        $businesses = User::find(Auth::user()->id)->favorites()->business()->paginate(2);
+
+        //return dd($businesses);
+        return view('business.favorite', compact('businesses'));
     }
 }

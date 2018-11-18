@@ -42,6 +42,7 @@ Route::post('/show/{id}', 'HomeController@addComment')->name('addComment');
 Route::group(['prefix'=>'mybusiness'],function(){
     Route::get('/','BusinessController@index')->name('index');
     Route::get('/create','BusinessController@create')->name('create');
+    Route::get('/favorites','BusinessController@showFavorite')->name('showFavorite');
     Route::post('/','BusinessController@store')->name('store');
     Route::get('/{business_id}/edit','BusinessController@edit')->name('edit');
     Route::get('/{business_id}','BusinessController@show')->name('show');
@@ -50,6 +51,7 @@ Route::group(['prefix'=>'mybusiness'],function(){
     Route::delete('/{business_id}','BusinessController@destroy')->name('destroy');
     Route::put('/{business_id}/status','BusinessController@businessStatus')->name('businessStatus');
     Route::delete('/{business_image_id}/delete','BusinessController@businessImageDestroy')->name('businessImageDestroy');
+
 });
 Route::group(['prefix'=>'admin'],function(){
     route::get('/','AdminController@index')->name('admin');
