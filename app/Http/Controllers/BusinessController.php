@@ -100,7 +100,8 @@ class BusinessController extends Controller
             $newPath = 'images/business/'.date('Y')."/".date('m')."/".date('d')."/";
             $newName = date('Y_m_d_H_i_s') .'_'. Auth::user()->username.'.'. $image->getClientOriginalExtension();
             $image->move($newPath, $newName);
-            unlink(public_path($business->image_path));
+            if(file_exists($business->image_path))
+                unlink(public_path($business->image_path));
             $business->image_path = $newPath.$newName;
         }
         $business->save();
@@ -138,6 +139,25 @@ class BusinessController extends Controller
             $business_image->image_path = '/'.$newPath . $newName;
             $business_image->save();
         }
+        return back();
+    }
+
+    public function businessImageDestroy($business_image_id, Request $request)
+    {
+
+//        if($request->file('businessImage')) {
+//            $image = $request->file('businessUploadImage');
+//            $newPath = 'images/businessImages/'.date('Y')."/".date('m')."/".date('d')."/";
+//            $newName = date('Y_m_d_H_i_s').'_'.$id.'.'.$image->getClientOriginalExtension();
+//            $image->move($newPath, $newName);
+//            $business_image = new BusinessImage;
+//            $business_image->business_id = $id;
+//            $business_image->image_path = '/'.$newPath . $newName;
+//            $business_image->save();
+//        }
+        $business_image = BusinessImage::find($business_image_id);
+        unlink(public_path($business_image->image_path));
+        $business_image->delete();
         return back();
     }
 }

@@ -49,6 +49,7 @@ Route::group(['prefix'=>'mybusiness'],function(){
     Route::post('/{business_id}/imageupload','BusinessController@businessImageUpload')->name('businessImageUpload');
     Route::delete('/{business_id}','BusinessController@destroy')->name('destroy');
     Route::put('/{business_id}/status','BusinessController@businessStatus')->name('businessStatus');
+    Route::delete('/{business_image_id}/delete','BusinessController@businessImageDestroy')->name('businessImageDestroy');
 });
 Route::group(['prefix'=>'admin'],function(){
     route::get('/','AdminController@index')->name('admin');

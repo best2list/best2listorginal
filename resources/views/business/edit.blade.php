@@ -18,8 +18,8 @@
                                     <input id="businessUploadImage" type="file" class="form-control{{ $errors->has('businessUploadImage') ? ' is-invalid' : '' }}" name="businessUploadImage" autofocus required>
                                     @if ($errors->has('businessUploadImage'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('businessUploadImage') }}</strong>
-                                    </span>
+                                            <strong>{{ $errors->first('businessUploadImage') }}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
@@ -36,9 +36,9 @@
 
                         @foreach($businessImages as $businessImage)
                             <img class="col-md-4" src="{{$businessImage->image_path}}" alt="business image">
-                            <form action="{{ route('businessImageUpload',$business->id) }}" method="post" >
-                                @csrf
+                            <form method="post" action="{{ route('businessImageDestroy',$businessImage->id)}} " aria-label="{{ __('businessImageDestroy') }}"  >
                                 {{method_field('delete')}}
+                                @csrf
                                 <input type="submit" value="delete" class="btn btn-danger"/>
                             </form>
                             <hr/>

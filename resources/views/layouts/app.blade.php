@@ -99,11 +99,11 @@
                                 <div class="card-body">
                                     <ul>
                                         @foreach ($categories as $parent)
-                                            <li><a href="category/{{ $parent->id }}">{{ $parent->title }}</a>
+                                            <li><a href="/category/{{ $parent->id }}">{{ $parent->title }}</a>
                                                 @if ($parent->children->count())
                                                     <ul>
                                                         @foreach ($parent->children as $child)
-                                                            <li><a href="category/{{ $child->id }}">{{ $child->title }}</a></li>
+                                                            <li><a href="/category/{{ $child->id }}">{{ $child->title }}</a></li>
                                                         @endforeach
                                                     </ul>
                                                 @endif
