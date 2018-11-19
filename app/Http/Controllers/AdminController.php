@@ -11,12 +11,14 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $countries = Country::all();
-        $categories = Category::all();
-        $comments = Comment::all();
-        return view('admin.dashboard',compact('countries', 'categories', 'comments'));
+        return view('admin.dashboard');
     }
 
+    public function category()
+    {
+        $categories = Category::all();
+        return view('admin.category', compact('categories'));
+    }
 
     public function storeCategory(Request $request)
     {
@@ -26,6 +28,19 @@ class AdminController extends Controller
             $category->parent_id = $request->parent_id;
         $category->save();
         return back();
+    }
+
+    public function categoryDestroy($category_id)
+    {
+        $category = Category::find($category_id);
+        $category->delete();
+        return back();
+    }
+
+    public function country()
+    {
+        $countries = Country::all();
+        return view('admin.country', compact('countries'));
     }
 
     public function storeCountry(Request $request)
@@ -45,6 +60,19 @@ class AdminController extends Controller
             return $request->file('flag');
         }
         return back();
+    }
+
+    public function countryDestroy($country_id)
+    {
+        $country = Country::find($country_id);
+        $country->delete();
+        return back();
+    }
+
+    public function comment()
+    {
+        $comments = Comment::all();
+        return view('admin.comment', compact('comments'));
     }
 
     public function commentStatus($comment_id)

@@ -54,8 +54,13 @@ Route::group(['prefix'=>'mybusiness'],function(){
 
 });
 Route::group(['prefix'=>'admin'],function(){
-    route::get('/','AdminController@index')->name('admin');
-    route::post('/storecountry','AdminController@storeCountry')->name('storeCountry');
-    route::post('/storecategory','AdminController@storeCategory')->name('storeCategory');
-    route::put('/{comment_id}/status','AdminController@commentStatus')->name('commentStatus');
+    Route::get('/','AdminController@index')->name('admin');
+    Route::get('/country', 'AdminController@country')->name('country');
+    Route::post('/country/storecountry','AdminController@storeCountry')->name('storeCountry');
+    Route::delete('/country/{country_id}/delete', 'AdminController@countryDestroy')->name('countryDestroy');
+    Route::get('/category', 'AdminController@category')->name('category');
+    Route::post('/storecategory','AdminController@storeCategory')->name('storeCategory');
+    Route::delete('/category/{category_id}/delete', 'AdminController@categoryDestroy')->name('categoryDestroy');
+    Route::get('/comment','AdminController@comment')->name('comment');
+    Route::put('/comment/{comment_id}/status','AdminController@commentStatus')->name('commentStatus');
 });
