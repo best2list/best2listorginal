@@ -85,4 +85,11 @@ class AdminController extends Controller
         $comment->save();
         return back();
     }
+
+    public function commentDestroy($comment_id)
+    {
+        $comment = Comment::find($comment_id);
+        $comment->delete();
+        return back();
+    }
 }

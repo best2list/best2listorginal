@@ -63,4 +63,5 @@ Route::group(['prefix'=>'admin'],function(){
     Route::delete('/category/{category_id}/delete', 'AdminController@categoryDestroy')->name('categoryDestroy');
     Route::get('/comment','AdminController@comment')->name('comment');
     Route::put('/comment/{comment_id}/status','AdminController@commentStatus')->name('commentStatus');
+    Route::delete('/comment/{comment_id}/delete','AdminController@commentDestroy')->name('commentDestroy');
 });

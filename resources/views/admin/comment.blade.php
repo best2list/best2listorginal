@@ -23,8 +23,15 @@
                                                 {{ method_field('put') }}
                                                 {{csrf_field()}}
                                                 <input type="submit" value="change">
-                                            </form> </td>
-                                        <td><a href="">delete</a> </td>
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form action="{{ route('commentDestroy', $comment->id) }}" method="post">
+                                                {{ method_field('delete') }}
+                                                {{csrf_field()}}
+                                                <input type="submit" class="btn btn-danger" value="delete">
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </table>

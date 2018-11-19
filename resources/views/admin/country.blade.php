@@ -1,32 +1,5 @@
 @extends('admin.dashboard')
 @section('content')
-                    <div class="card-body">
-                        <table class="table table-bordered">
-                            <tr class="table-active">
-                                <td>country ID</td>
-                                <td>country name</td>
-                                <td>flag</td>
-                                <td>edit</td>
-                                <td>delete</td>
-                            </tr>
-                            @foreach($countries as $country)
-                                <tr>
-                                    <td>{{ $country->id }}</td>
-                                    <td>{{ $country->country }}</td>
-                                    <td><img class="col-md-3" src="/{{ $country->flag }}" alt="{{$country->country}}"></td>
-                                    <td><a href="">edit</a> </td>
-                                    <td><form action="{{ route('countryDestroy', $country->id) }}" method="post">
-                                            {{ method_field('delete') }}
-                                            @csrf
-                                            <input type="submit" value="delete" class="btn btn-danger">
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </table>
-                    </div>
-
-                    <br/>
 
                     <div class="card">
                         <div class="card-header">create country</div>
@@ -72,4 +45,33 @@
                             </form>
                         </div>
                     </div>
+    <br/>
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <tr class="table-active">
+                                <td>country ID</td>
+                                <td>country name</td>
+                                <td>flag</td>
+                                <td>edit</td>
+                                <td>delete</td>
+                            </tr>
+                            @foreach($countries as $country)
+                                <tr>
+                                    <td>{{ $country->id }}</td>
+                                    <td>{{ $country->country }}</td>
+                                    <td><img class="col-md-3" src="/{{ $country->flag }}" alt="{{$country->country}}"></td>
+                                    <td><a href="">edit</a> </td>
+                                    <td><form action="{{ route('countryDestroy', $country->id) }}" method="post">
+                                            {{ method_field('delete') }}
+                                            @csrf
+                                            <input type="submit" value="delete" class="btn btn-danger">
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    </div>
+
+                    <br/>
+
 @endsection
