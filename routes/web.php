@@ -49,6 +49,7 @@ Route::group(['prefix'=>'mybusiness'],function(){
     Route::put('/{business_id}','BusinessController@update')->name('update');
     Route::delete('/{business_id}','BusinessController@destroy')->name('destroy');
     Route::post('/{business_id}/imageupload','BusinessController@businessImageUpload')->name('businessImageUpload');
+    Route::put('/{business_id}/addtofavorites','BusinessController@addToFavorite')->name('addToFavorite');
     Route::put('/{business_id}/status','BusinessController@businessStatus')->name('businessStatus');
     Route::delete('/{business_image_id}/delete','BusinessController@businessImageDestroy')->name('businessImageDestroy');
 

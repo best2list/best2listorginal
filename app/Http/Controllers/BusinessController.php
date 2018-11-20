@@ -167,4 +167,19 @@ class BusinessController extends Controller
         return view('business.favorite', compact('favorites'));
 //        return view('business.favorite', compact('businesses'));
     }
+
+    public function addToFavorite($business_id)
+    {
+        $business = Favorites::where('business_id',$business_id);
+        if($business->count()){
+            $business->delete();
+        }
+        else{
+            $businessObject = new Favorites;
+            $businessObject->user_id = Auth::user()->id;
+            $businessObject->business_id = $business_id;
+            $businessObject->save();
+        }
+        return back();
+    }
 }

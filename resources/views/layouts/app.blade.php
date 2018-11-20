@@ -58,8 +58,8 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="/mybusiness">my account</a>
-                                    <a class="dropdown-item" href="/mybusiness/create">create business</a>
+                                    <a class="dropdown-item" href="{{ route('index') }}">my account</a>
+                                    <a class="dropdown-item" href="{{ route('create') }}">create business</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

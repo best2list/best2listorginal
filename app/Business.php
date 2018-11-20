@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Business extends Model
 {
@@ -29,5 +30,10 @@ class Business extends Model
     public function favorites()
     {
         return $this->belongsToMany(Favorites::class);
+    }
+
+    public function countFavorite($id)
+    {
+        return Favorites::where('business_id',$id)->where('user_id', Auth::user()->id)->count();
     }
 }
