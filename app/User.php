@@ -32,7 +32,7 @@ class User extends Authenticatable
 
     public function favorites()
     {
-        return $this->hasMany('App\Favorites');
+        return $this->hasMany(Favorites::class,'user_id', 'id');
     }
 
 }

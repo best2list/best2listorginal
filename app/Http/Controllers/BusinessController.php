@@ -154,9 +154,13 @@ class BusinessController extends Controller
 
     public function showFavorite()
     {
-        $businesses = User::find(Auth::user()->id)->favorites()->business()->paginate(2);
+//        $businesses = User::find(Auth::user()->id)->favorites()->business->get();
+        //$businesses = User::find(Auth::user()->id)->favorites()->business()->get();
+        //$businesses = Favorites::find(1)->business->get();
+        $businesses = User::find(Auth::user()->id)->favorites()->get();
+        //$businesses = $businesses->get();
 
-        //return dd($businesses);
+        return dd($businesses);
         return view('business.favorite', compact('businesses'));
     }
 }
