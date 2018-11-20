@@ -26,4 +26,8 @@ class Business extends Model
     {
         return Country::find($id);
     }
+    public function favorites()
+    {
+        return $this->belongsToMany(Favorites::class);
+    }
 }

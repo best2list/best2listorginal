@@ -13,6 +13,10 @@ class Favorites extends Model
      */
     public function business()
     {
-        return $this->hasOne(Business::class, 'business_id', 'id');
+        return $this->hasOne(Business::class, 'id', 'business_id');
+    }
+    public function hasBusiness($business_id)
+    {
+        return Business::find($business_id);
     }
 }
