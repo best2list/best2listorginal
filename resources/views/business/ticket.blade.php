@@ -35,7 +35,7 @@
             {{--@if($favorite->hasBusiness($favorite->business_id)->type=='active')--}}
 
 
-                    <div class="text-muted mt-3" style="font-size: 13px;">{{ Auth::user()->username }} : {{ $ticket->message }}</div>
+                    <div class="text-muted mt-3 mb-1" style="font-size: 13px;">{{ Auth::user()->username }} : {{ $ticket->message }}</div>
                     <span class="text-white p-1 rounded @if($ticket->reply_status=='unseen') bg-danger @elseif($ticket->reply_status=='seen') bg-warning @else bg-success @endif" style="font-size: 13px;">{{ $ticket->reply_status }}</>
                     {{--<h4 class="mt-0 pt-1" style="font-size: 16px;"><a class="card-link text-primary" href="{{ route('showBusiness', $favorite->hasBusiness($favorite->business_id)->id) }}">{{ $favorite->hasBusiness($favorite->business_id)->title }}</a></h4>--}}
                     {{--<div class="text-muted mt-3" style="font-size: 13px;"><i class="fas fa-map-marker-alt"></i> {{ $favorite->hasBusiness($favorite->business_id)->hasCountry($favorite->hasBusiness($favorite->business_id)->country)->country }} , {{ $favorite->hasBusiness($favorite->business_id)->city }}</div>--}}
