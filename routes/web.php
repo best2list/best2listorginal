@@ -39,16 +39,15 @@ Route::get('/country/{id}', 'HomeController@getCountry')->name('getCountry');
 Route::get('/show/{id}', 'HomeController@showBusiness')->name('showBusiness');
 Route::post('/show/{id}/addcomment', 'HomeController@addComment')->name('addComment');
 
-Route::group(['pr
-efix'=>'mybusiness'],function(){
+Route::group(['prefix'=>'mybusiness'],function(){
     Route::get('/','BusinessController@index')->name('index');
     Route::get('/create','BusinessController@create')->name('create');
     Route::get('/favorites','BusinessController@showFavorite')->name('showFavorite');
     Route::post('/','BusinessController@store')->name('store');
-    Route::get('/{business_id}/edit','BusinessController@edit')->name('edit');
     Route::get('/{business_id}','BusinessController@show')->name('show');
     Route::put('/{business_id}','BusinessController@update')->name('update');
     Route::delete('/{business_id}','BusinessController@destroy')->name('destroy');
+    Route::get('/{business_id}/edit','BusinessController@edit')->name('edit');
     Route::post('/{business_id}/imageupload','BusinessController@businessImageUpload')->name('businessImageUpload');
     Route::put('/{business_id}/addtofavorites','BusinessController@addToFavorite')->name('addToFavorite');
     Route::put('/{business_id}/status','BusinessController@businessStatus')->name('businessStatus');
