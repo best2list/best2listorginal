@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bb4315c4-b672-4ec5-8b5f-dac1f52edcd9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Faq.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2018_11_21_104849_create_faqs_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BusinessController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BusinessController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/business/my_account_menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/business/my_account_menu.blade.php" afterDir="false" />
@@ -89,14 +91,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="php" value="7400" />
+          <entry key="php" value="7408" />
           <entry key="txt" value="868" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Blade" value="2385" />
-          <entry key="PHP" value="5015" />
+          <entry key="PHP" value="5023" />
           <entry key="PLAIN_TEXT" value="869" />
         </counts>
       </usages-collector>
@@ -120,8 +122,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BusinessController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="187" column="24" selection-start-line="187" selection-start-column="24" selection-end-line="187" selection-end-column="24" />
+            <state relative-caret-position="372">
+              <caret line="187" column="29" lean-forward="true" selection-start-line="187" selection-start-column="29" selection-end-line="187" selection-end-column="29" />
               <folding>
                 <element signature="e#40#57#0#PHP" expanded="true" />
               </folding>
@@ -385,11 +387,11 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="128" />
-    <option name="y" value="41" />
-    <option name="width" value="1053" />
-    <option name="height" value="910" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="98" />
+    <option name="y" value="-20" />
+    <option name="width" value="748" />
+    <option name="height" value="879" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -428,28 +430,6 @@
             <path>
               <item name="best2listorginal" type="b2602c69:ProjectViewProjectNode" />
               <item name="best2listorginal" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="best2listorginal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="best2listorginal" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="best2listorginal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="best2listorginal" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="best2listorginal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="best2listorginal" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="best2listorginal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="best2listorginal" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -457,27 +437,6 @@
               <item name="best2listorginal" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="best2listorginal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="best2listorginal" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="best2listorginal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="best2listorginal" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="best2listorginal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="best2listorginal" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="best2listorginal" type="b2602c69:ProjectViewProjectNode" />
@@ -553,7 +512,7 @@
       <workItem from="1542536485933" duration="9110000" />
       <workItem from="1542607983837" duration="8832000" />
       <workItem from="1542693796997" duration="19796000" />
-      <workItem from="1542779664890" duration="18371000" />
+      <workItem from="1542779664890" duration="18775000" />
     </task>
     <task id="LOCAL-00001" summary="added image_path column to businesses table">
       <created>1542440170072</created>
@@ -671,16 +630,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283005000" />
+    <option name="totallyTimeSpent" value="283409000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
+    <frame x="738" y="222" width="748" height="879" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17718446" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.31831396" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.23529412" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.27345845" />
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.3298731" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3298731" />
@@ -1055,8 +1013,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BusinessController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="187" column="24" selection-start-line="187" selection-start-column="24" selection-end-line="187" selection-end-column="24" />
+        <state relative-caret-position="372">
+          <caret line="187" column="29" lean-forward="true" selection-start-line="187" selection-start-column="29" selection-end-line="187" selection-end-column="29" />
           <folding>
             <element signature="e#40#57#0#PHP" expanded="true" />
           </folding>
