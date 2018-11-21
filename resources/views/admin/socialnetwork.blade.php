@@ -2,34 +2,47 @@
 @section('content')
 
     <div class="card">
-        <div class="card-header">create category</div>
+        <div class="card-header">upload images</div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route('storeCategory') }}" aria-label="{{ __('storeCategory') }}">
+            <form method="POST" action="" aria-label="{{ __('uploadimage') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">
-                    <label for="title" class="col-sm-4 col-form-label text-md-right">{{ __('title') }}</label>
+                    <label for="slideImage" class="col-sm-4 col-form-label text-md-right">{{ __('slide show Image *') }}</label>
 
                     <div class="col-md-6">
-                        <input id="title" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="{{ old('title') }}" required autofocus>
-
-                        @if ($errors->has('title'))
+                        <input id="slideImage" type="file" class="form-control{{ $errors->has('slideImage') ? ' is-invalid' : '' }}" name="slideImage" autofocus required>
+                        @if ($errors->has('slideImage'))
                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('title') }}</strong>
+                                            <strong>{{ $errors->first('slideImage') }}</strong>
+                                        </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="altTag" class="col-sm-4 col-form-label text-md-right">{{ __('alt tag ') }}</label>
+
+                    <div class="col-md-6">
+                        <input id="altTag" type="text" class="form-control{{ $errors->has('altTag') ? ' is-invalid' : '' }}" name="altTag" value="{{ old('altTag') }}" autofocus>
+
+                        @if ($errors->has('altTag'))
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('altTag') }}</strong>
                                     </span>
                         @endif
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="parent_id" class="col-sm-4 col-form-label text-md-right">{{ __('parent_id') }}</label>
+                    <label for="title" class="col-sm-4 col-form-label text-md-right">{{ __('title') }}</label>
 
                     <div class="col-md-6">
-                        <input id="parent_id" type="text" class="form-control{{ $errors->has('parent_id') ? ' is-invalid' : '' }}" name="parent_id" value="{{ old('parent_id') }}" autofocus>
+                        <input id="title" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="{{ old('title') }}" autofocus>
 
-                        @if ($errors->has('parent_id'))
+                        @if ($errors->has('title'))
                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('parent_id') }}</strong>
+                                        <strong>{{ $errors->first('title') }}</strong>
                                     </span>
                         @endif
                     </div>
@@ -46,33 +59,17 @@
         </div>
     </div>
 
-    <br/>
-
-                    <div class="card-body">
-                        {{--<table class="table table-bordered">--}}
-                            {{--<tr class="table-active">--}}
-                                {{--<td>category ID</td>--}}
-                                {{--<td>category name</td>--}}
-                                {{--<td>parent ID</td>--}}
-                                {{--<td>edit</td>--}}
-                                {{--<td>delete</td>--}}
-                            {{--</tr>--}}
-                            {{--@foreach($categories as $category)--}}
-                                {{--<tr>--}}
-                                    {{--<td>{{ $category->id }}</td>--}}
-                                    {{--<td>{{ $category->title }}</td>--}}
-                                    {{--<td>{{ $category->parent_id }}</td>--}}
-                                    {{--<td><a href="">edit</a> </td>--}}
-                                    {{--<td><form action="{{ route('categoryDestroy', $category->id) }}" method="post">--}}
-                                            {{--{{ method_field('delete') }}--}}
-                                            {{--@csrf--}}
-                                            {{--<input type="submit" value="delete" class="btn btn-danger">--}}
-                                        {{--</form>--}}
-                                    {{--</td>--}}
-                                {{--</tr>--}}
-                            {{--@endforeach--}}
-                        {{--</table>--}}
-                    </div>
+    <hr/>
+    {{--@foreach($slideImages as $slideImage)--}}
+        {{--<img class="col-md-4" src="{{$slideImage->image_path}}" alt="business image">--}}
+        {{--<form method="post" action="{{ route('destroySlide', $slideImage->id) }}" aria-label="{{ __('slideImageDestroy') }}">--}}
+            {{--{{method_field('delete')}}--}}
+            {{--@csrf--}}
+            {{--<br/>--}}
+            {{--<input type="submit" value="delete" class="btn btn-danger"/>--}}
+        {{--</form>--}}
+        {{--<hr/>--}}
+    {{--@endforeach--}}
 
 
 @endsection

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class slideshow extends Model
+class Slideshow extends Model
 {
     //
 }

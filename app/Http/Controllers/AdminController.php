@@ -96,7 +96,7 @@ class AdminController extends Controller
 
     public function slideshow()
     {
-        $slideImages = slideshow::all();
+        $slideImages = Slideshow::all();
         return view('admin.slideshow', compact('slideImages'));
     }
 
@@ -107,7 +107,7 @@ class AdminController extends Controller
             $newPath = 'images/slideImage/'.date('Y')."/".date('m')."/".date('d')."/";
             $newName = date('Y_m_d_H_i_s').'.'.$image->getClientOriginalExtension();
             $image->move($newPath, $newName);
-            $slideImage = new slideshow;
+            $slideImage = new Slideshow;
             $slideImage->altTag = $request->altTag;
             $slideImage->title = $request->title;
             $slideImage->image_path = '/'.$newPath . $newName;
@@ -118,7 +118,7 @@ class AdminController extends Controller
 
     public function destroySlide($id)
     {
-        $slideImage = slideshow::find($id);
+        $slideImage = Slideshow::find($id);
         unlink(public_path($slideImage->image_path));
         $slideImage->delete();
         return back();
