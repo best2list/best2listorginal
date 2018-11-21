@@ -87,6 +87,8 @@
                                         <li><a href="/admin/category">categories</a> </li>
                                         <li><a href="/admin/country">countries</a> </li>
                                         <li><a href="/admin/comment">comments</a> </li>
+                                        <li><a href="{{ route('slideshow') }}">slideshow</a> </li>
+                                        <li><a href="{{ route('socialnetwork') }}">social network</a> </li>
 
                                 </ul>
                             </div>

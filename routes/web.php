@@ -59,6 +59,10 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/country', 'AdminController@country')->name('country');
     Route::get('/category', 'AdminController@category')->name('category');
     Route::get('/comment','AdminController@comment')->name('comment');
+    Route::get('/slideshow','AdminController@slideshow')->name('slideshow');
+    Route::post('/storeslide','AdminController@storeSlide')->name('storeSlide');
+    Route::delete('/deleteslide/{id}','AdminController@destroySlide')->name('destroySlide');
+    Route::get('/socialnetwork','AdminController@socialnetwork')->name('socialnetwork');
     Route::post('/category/storecategory','AdminController@storeCategory')->name('storeCategory');
     Route::post('/country/storecountry','AdminController@storeCountry')->name('storeCountry');
     Route::delete('/category/{category_id}/delete', 'AdminController@categoryDestroy')->name('categoryDestroy');

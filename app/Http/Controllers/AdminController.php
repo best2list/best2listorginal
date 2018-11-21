@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Comment;
+use App\slideshow;
 use Illuminate\Http\Request;
 use App\Country;
 
@@ -91,5 +92,40 @@ class AdminController extends Controller
         $comment = Comment::find($comment_id);
         $comment->delete();
         return back();
+    }
+
+    public function slideshow()
+    {
+        $slideImages = slideshow::all();
+        return view('admin.slideshow', compact('slideImages'));
+    }
+
+    public function storeSlide(Request $request)
+    {
+        if($request->file('slideImage')) {
+            $image = $request->file('slideImage');
+            $newPath = 'images/slideImage/'.date('Y')."/".date('m')."/".date('d')."/";
+            $newName = date('Y_m_d_H_i_s').'.'.$image->getClientOriginalExtension();
+            $image->move($newPath, $newName);
+            $slideImage = new slideshow;
+            $slideImage->altTag = $request->altTag;
+            $slideImage->title = $request->title;
+            $slideImage->image_path = '/'.$newPath . $newName;
+            $slideImage->save();
+        }
+        return back();
+    }
+
+    public function destroySlide($id)
+    {
+        $slideImage = slideshow::find($id);
+        unlink(public_path($slideImage->image_path));
+        $slideImage->delete();
+        return back();
+    }
+
+    public function socialnetwork()
+    {
+        return view('admin.socialnetwork');
     }
 }
