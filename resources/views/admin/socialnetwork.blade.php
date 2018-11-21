@@ -5,44 +5,44 @@
         <div class="card-header">upload images</div>
 
         <div class="card-body">
-            <form method="POST" action="" aria-label="{{ __('uploadimage') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route("storeSocialNetwork") }}" aria-label="{{ __('social_network') }}">
                 @csrf
                 <div class="form-group row">
-                    <label for="slideImage" class="col-sm-4 col-form-label text-md-right">{{ __('slide show Image *') }}</label>
+                    <label for="icon" class="col-sm-4 col-form-label text-md-right">{{ __('icon *') }}</label>
 
                     <div class="col-md-6">
-                        <input id="slideImage" type="file" class="form-control{{ $errors->has('slideImage') ? ' is-invalid' : '' }}" name="slideImage" autofocus required>
-                        @if ($errors->has('slideImage'))
+                        <input id="slideImage" type="text" class="form-control{{ $errors->has('icon') ? ' is-invalid' : '' }}" name="icon" autofocus required>
+                        @if ($errors->has('icon'))
                             <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('slideImage') }}</strong>
+                                            <strong>{{ $errors->first('icon') }}</strong>
                                         </span>
                         @endif
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="altTag" class="col-sm-4 col-form-label text-md-right">{{ __('alt tag ') }}</label>
+                    <label for="color" class="col-sm-4 col-form-label text-md-right">{{ __('color ') }}</label>
 
                     <div class="col-md-6">
-                        <input id="altTag" type="text" class="form-control{{ $errors->has('altTag') ? ' is-invalid' : '' }}" name="altTag" value="{{ old('altTag') }}" autofocus>
+                        <input id="color" type="color" class="form-control{{ $errors->has('color') ? ' is-invalid' : '' }}" name="color" value="{{ old('color') }}" autofocus>
 
                         @if ($errors->has('altTag'))
                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('altTag') }}</strong>
+                                        <strong>{{ $errors->first('color') }}</strong>
                                     </span>
                         @endif
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label for="title" class="col-sm-4 col-form-label text-md-right">{{ __('title') }}</label>
+                    <label for="address" class="col-sm-4 col-form-label text-md-right">{{ __('address (URL)') }}</label>
 
                     <div class="col-md-6">
-                        <input id="title" type="text" class="form-control{{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" value="{{ old('title') }}" autofocus>
+                        <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" autofocus>
 
-                        @if ($errors->has('title'))
+                        @if ($errors->has('address'))
                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('title') }}</strong>
+                                        <strong>{{ $errors->first('address') }}</strong>
                                     </span>
                         @endif
                     </div>
@@ -58,18 +58,31 @@
             </form>
         </div>
     </div>
+<br>
+    <table class="table table-bordered" >
+        <tr class="table-active">
+            <td>icon</td>
+            <td>address (URL)</td>
+            <td>edit</td>
+            <td>delete</td>
+        </tr>
+    @foreach($socialNetworks as $socialNetwork)
+            <tr class="text-center">
+                <td ><a  href="{{ $socialNetwork->address }}" style="color: {{ $socialNetwork->color }}; font-size: 35px ">
 
-    <hr/>
-    {{--@foreach($slideImages as $slideImage)--}}
-        {{--<img class="col-md-4" src="{{$slideImage->image_path}}" alt="business image">--}}
-        {{--<form method="post" action="{{ route('destroySlide', $slideImage->id) }}" aria-label="{{ __('slideImageDestroy') }}">--}}
-            {{--{{method_field('delete')}}--}}
-            {{--@csrf--}}
-            {{--<br/>--}}
-            {{--<input type="submit" value="delete" class="btn btn-danger"/>--}}
-        {{--</form>--}}
-        {{--<hr/>--}}
-    {{--@endforeach--}}
+                        {!! $socialNetwork->icon !!}
+                    </a></td>
+                <td>{{ $socialNetwork->address }}</td>
+                <td>edit</td>
+                <td> <form method="post" action="{{ route("deleteSocialNetwork",$socialNetwork->id) }}" aria-label="{{ __('deleteSocialNetwork') }}">
+                        {{method_field('delete')}}
+                        @csrf
+                        <input type="submit" value="delete" class="btn btn-danger"/>
+                    </form></td>
+            </tr>
 
+
+    @endforeach
+    </table>
 
 @endsection

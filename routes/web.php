@@ -39,7 +39,8 @@ Route::get('/country/{id}', 'HomeController@getCountry')->name('getCountry');
 Route::get('/show/{id}', 'HomeController@showBusiness')->name('showBusiness');
 Route::post('/show/{id}/addcomment', 'HomeController@addComment')->name('addComment');
 
-Route::group(['prefix'=>'mybusiness'],function(){
+Route::group(['pr
+efix'=>'mybusiness'],function(){
     Route::get('/','BusinessController@index')->name('index');
     Route::get('/create','BusinessController@create')->name('create');
     Route::get('/favorites','BusinessController@showFavorite')->name('showFavorite');
@@ -61,7 +62,9 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/comment','AdminController@comment')->name('comment');
     Route::get('/slideshow','AdminController@slideshow')->name('slideshow');
     Route::post('/storeslide','AdminController@storeSlide')->name('storeSlide');
+    Route::post('/storesocialnetwork','AdminController@storeSocialNetwork')->name('storeSocialNetwork');
     Route::delete('/deleteslide/{id}','AdminController@destroySlide')->name('destroySlide');
+    Route::delete('/deletesocialnetwork/{id}','AdminController@deleteSocialNetwork')->name('deleteSocialNetwork');
     Route::get('/socialnetwork','AdminController@socialnetwork')->name('socialnetwork');
     Route::post('/category/storecategory','AdminController@storeCategory')->name('storeCategory');
     Route::post('/country/storecountry','AdminController@storeCountry')->name('storeCountry');

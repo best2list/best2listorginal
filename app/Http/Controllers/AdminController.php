@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Comment;
 use App\slideshow;
+use App\SocialNetwork;
 use Illuminate\Http\Request;
 use App\Country;
 
@@ -126,6 +127,25 @@ class AdminController extends Controller
 
     public function socialnetwork()
     {
-        return view('admin.socialnetwork');
+        $socialNetworks = SocialNetwork::all();
+        return view('admin.socialnetwork', compact("socialNetworks"));
+    }
+
+    public function storeSocialNetwork(Request $request)
+    {
+
+        $socialNetwork= new SocialNetwork;
+        $socialNetwork->icon = $request->icon;
+        $socialNetwork->color = $request->color;
+        $socialNetwork->address = $request->address;
+        $socialNetwork->save();
+        return back();
+    }
+
+    public function deleteSocialNetwork($id)
+    {
+        $socialImage = SocialNetwork::find($id);
+        $socialImage->delete();
+        return back();
     }
 }
