@@ -182,4 +182,9 @@ class BusinessController extends Controller
         }
         return back();
     }
+
+    public function ticket()
+    {
+        return view('business');
+    }
 }

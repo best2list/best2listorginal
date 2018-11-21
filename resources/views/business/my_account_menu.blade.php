@@ -15,6 +15,7 @@
                 <li><a href="{{ route('index') }}">my businesses</a> </li>
                 <li><a href="{{ route('create') }}">new business</a></li>
                 <li><a href="{{ route('showFavorite') }}">my favorite business</a> </li>
+                <li><a href="{{ route('ticket') }}">ticket</a> </li>
                 <li><a href="/password/reset">reset password</a></li>
             </ul>
         </div>

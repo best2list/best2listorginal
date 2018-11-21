@@ -43,6 +43,7 @@ Route::group(['prefix'=>'mybusiness'],function(){
     Route::get('/','BusinessController@index')->name('index');
     Route::get('/create','BusinessController@create')->name('create');
     Route::get('/favorites','BusinessController@showFavorite')->name('showFavorite');
+    Route::get('/ticket','BusinessController@ticket')->name('ticket');
     Route::post('/','BusinessController@store')->name('store');
     Route::get('/{business_id}','BusinessController@show')->name('show');
     Route::put('/{business_id}','BusinessController@update')->name('update');
