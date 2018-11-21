@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Comment;
+use App\Faq;
 use App\slideshow;
 use App\SocialNetwork;
 use Illuminate\Http\Request;
@@ -146,6 +147,31 @@ class AdminController extends Controller
     {
         $socialImage = SocialNetwork::find($id);
         $socialImage->delete();
+        return back();
+    }
+
+    public function FAQ()
+    {
+        $faqs = Faq::all();
+        return view("admin.FAQ",compact("faqs"));
+
+
+    }
+
+    public function storeFAQ(Request $request)
+    {
+
+        $faq= new Faq;
+        $faq->question = $request->question;
+        $faq->answer = $request->answer;
+        $faq->save();
+        return back();
+    }
+
+    public function destroyFAQ($id)
+    {
+        $faqitem = Faq::find($id);
+        $faqitem->delete();
         return back();
     }
 }

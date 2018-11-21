@@ -86,11 +86,13 @@
                             <div class="card-body">
                                 <ul>
 
-                                        <li><a href="/admin/category">categories</a> </li>
-                                        <li><a href="/admin/country">countries</a> </li>
-                                        <li><a href="/admin/comment">comments</a> </li>
-                                        <li><a href="{{ route('slideshow') }}">slideshow</a> </li>
-                                        <li><a href="{{ route('socialnetwork') }}">social network</a> </li>
+                                        <li><a href="/admin/category">Categories</a> </li>
+                                        <li><a href="/admin/country">Countries</a> </li>
+                                        <li><a href="/admin/comment">Comments</a> </li>
+                                        <li><a href="{{ route('slideshow') }}">Slideshow</a> </li>
+                                        <li><a href="{{ route('socialnetwork') }}">Social Network</a> </li>
+                                        <li><a href="{{ route("FAQ") }}">FAQ</a> </li>
+                                        <li><a href="#">Tickets</a> </li>
 
                                 </ul>
                             </div>

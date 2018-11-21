@@ -59,12 +59,15 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/','AdminController@index')->name('admin');
     Route::get('/country', 'AdminController@country')->name('country');
     Route::get('/category', 'AdminController@category')->name('category');
+    Route::get('/FAQ', 'AdminController@FAQ')->name('FAQ');
+    Route::post('/storefaq','AdminController@storeFAQ')->name('storeFAQ');
     Route::get('/comment','AdminController@comment')->name('comment');
     Route::get('/slideshow','AdminController@slideshow')->name('slideshow');
     Route::post('/storeslide','AdminController@storeSlide')->name('storeSlide');
     Route::post('/storesocialnetwork','AdminController@storeSocialNetwork')->name('storeSocialNetwork');
     Route::delete('/deleteslide/{id}','AdminController@destroySlide')->name('destroySlide');
     Route::delete('/deletesocialnetwork/{id}','AdminController@deleteSocialNetwork')->name('deleteSocialNetwork');
+    Route::delete('/FAQ/{id}','AdminController@destroyFAQ')->name('destroyFAQ');
     Route::get('/socialnetwork','AdminController@socialnetwork')->name('socialnetwork');
     Route::post('/category/storecategory','AdminController@storeCategory')->name('storeCategory');
     Route::post('/country/storecountry','AdminController@storeCountry')->name('storeCountry');
