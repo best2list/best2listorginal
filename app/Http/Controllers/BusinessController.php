@@ -6,6 +6,7 @@ use App\Business;
 use App\BusinessImage;
 use App\Category;
 use App\Country;
+use App\Ticket;
 use App\User;
 use App\Favorites;
 use Illuminate\Http\Request;
@@ -185,6 +186,7 @@ class BusinessController extends Controller
 
     public function ticket()
     {
-        return view('business');
+        $tickets = Ticket::where('user_id', Auth::user()->id)->get();
+        return view('business.ticket', compact('tickets'));
     }
 }
