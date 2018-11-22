@@ -182,3 +182,4 @@ class AdminController extends Controller
         return view('business.ticket', compact('tickets'));
     }
 }
+
