@@ -7,8 +7,10 @@ use App\Comment;
 use App\Faq;
 use App\slideshow;
 use App\SocialNetwork;
+use App\Ticket;
 use Illuminate\Http\Request;
 use App\Country;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -174,4 +176,12 @@ class AdminController extends Controller
         $faqitem->delete();
         return back();
     }
+    public function tickets()
+    {
+        $tickets = Ticket::where('user_id', Auth::user()->id)->get();
+        return view('admin.tickets', compact('tickets'));
+    }
 }
+
+
+

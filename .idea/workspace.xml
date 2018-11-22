@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="bb4315c4-b672-4ec5-8b5f-dac1f52edcd9" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="bb4315c4-b672-4ec5-8b5f-dac1f52edcd9" name="Default Changelist" comment="country image for iraq and poland is ok">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/tickets.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tickets.blade.php" afterDir="false" />
+    </list>
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,10 +117,47 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-477832985">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="editorconfig" value="1" />
+          <entry key="php" value="33" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Blade" value="19" />
+          <entry key="PHP" value="14" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="editorconfig" value="1" />
+          <entry key="php" value="155" />
+          <entry key="txt" value="734" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Blade" value="81" />
+          <entry key="PHP" value="74" />
+          <entry key="PLAIN_TEXT" value="735" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BusinessController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="343">
@@ -130,28 +174,53 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="213">
               <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
+=======
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/resources/views/business/sendticket.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="164">
               <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+=======
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/tickets.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/country.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state>
+              <caret selection-end-line="1" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="94" column="63" lean-forward="true" selection-start-line="94" selection-start-column="63" selection-end-line="94" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -181,6 +250,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/database/migrations/2018_10_29_093423_create_business_categories_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2018_11_11_135013_create_business_categories_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2018_11_12_063003_create_businesses_to_categories.php" />
+        <option value="$PROJECT_DIR$/app/Country.php" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
         <option value="$PROJECT_DIR$/database/migrations/2018_10_29_093058_create_comments_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_11_14_090511_create_comments_table.php" />
         <option value="$PROJECT_DIR$/app/Comment.php" />
@@ -193,9 +269,7 @@
         <option value="$PROJECT_DIR$/database/migrations/2018_10_29_092629_create_businesses_table.php" />
         <option value="$PROJECT_DIR$/resources/views/business/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_11_17_100110_create_business_images_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/business/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/business/show.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_11_18_103014_create_favorites_table.php" />
         <option value="$PROJECT_DIR$/app/favorites.php" />
@@ -204,22 +278,16 @@
         <option value="$PROJECT_DIR$/resources/views/admin/category.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Favorites.php" />
-        <option value="$PROJECT_DIR$/resources/views/business/favorite.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/app/Business.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/category.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/country.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_11_21_073840_create_slideshows_table.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/slideshow.blade.php" />
         <option value="$PROJECT_DIR$/app/SocialNetwork.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_11_21_090846_create_social_network_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_11_21_093326_create_social_networks_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/socialnetwork.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/Faq.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_11_21_104849_create_faqs_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/FAQ.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/business/my_account_menu.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_11_21_131229_create_tickets_table.php" />
@@ -230,8 +298,21 @@
         <option value="$PROJECT_DIR$/database/migrations/2018_11_22_065259_tickets.php" />
         <option value="$PROJECT_DIR$/resources/views/business/ticket.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/Http/Controllers/BusinessController.php" />
         <option value="$PROJECT_DIR$/resources/views/business/sendticket.blade.php" />
+=======
+        <option value="$PROJECT_DIR$/resources/views/admin/dashboard.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/socialnetwork.blade.php" />
+        <option value="$PROJECT_DIR$/.editorconfig" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
+        <option value="$PROJECT_DIR$/resources/views/country.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/category.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/show.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/business/favorite.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/tickets.blade.php" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
       </list>
     </option>
   </component>
@@ -332,8 +413,13 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+<<<<<<< HEAD
     <option name="x" value="606" />
     <option name="y" value="69" />
+=======
+    <option name="x" value="98" />
+    <option name="y" value="-20" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
     <option name="width" value="748" />
     <option name="height" value="879" />
   </component>
@@ -355,6 +441,7 @@
             <path>
               <item name="best2listorginal" type="b2602c69:ProjectViewProjectNode" />
               <item name="best2listorginal" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -390,6 +477,8 @@
             <path>
               <item name="best2listorginal" type="b2602c69:ProjectViewProjectNode" />
               <item name="best2listorginal" type="462c0819:PsiDirectoryNode" />
+=======
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -403,7 +492,7 @@
               <item name="best2listorginal" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="business" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="best2listorginal" type="b2602c69:ProjectViewProjectNode" />
@@ -429,11 +518,15 @@
       <recent name="C:\Users\faramarzi\Desktop\firstProject\public\image" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\khosrojerdi\Desktop\best2listorginal\resources\views\admin" />
       <recent name="C:\Users\faramarzi\Desktop\github\best2listorginal\resources\views\business" />
       <recent name="C:\Users\faramarzi\Desktop\github\best2listorginal\resources\views\admin" />
       <recent name="C:\Users\faramarzi\Desktop\firstProject\database\migrations" />
       <recent name="C:\Users\faramarzi\Desktop\firstProject\public\image" />
+<<<<<<< HEAD
       <recent name="C:\Users\faramarzi\Desktop\firstProject\public" />
+=======
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
     </key>
   </component>
   <component name="RunDashboard">
@@ -481,8 +574,14 @@
       <workItem from="1542536485933" duration="9110000" />
       <workItem from="1542607983837" duration="8832000" />
       <workItem from="1542693796997" duration="19796000" />
+<<<<<<< HEAD
       <workItem from="1542779664890" duration="24282000" />
       <workItem from="1542866044629" duration="10688000" />
+=======
+      <workItem from="1542779664890" duration="24059000" />
+      <workItem from="1542866480008" duration="2854000" />
+      <workItem from="1542872908291" duration="5359000" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
     </task>
     <task id="LOCAL-00001" summary="added image_path column to businesses table">
       <created>1542440170072</created>
@@ -596,6 +695,7 @@
       <option name="project" value="LOCAL" />
       <updated>1542804195666</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00017" summary="ticket:&#10;user part is added(can send a message and visit progress of message)">
       <created>1542879468331</created>
       <option name="number" value="00017" />
@@ -608,14 +708,97 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="299604000" />
+=======
+    <task id="LOCAL-00017" summary="color of social networks is edited for showing the current color">
+      <created>1542869742008</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1542869742008</updated>
+    </task>
+    <task id="LOCAL-00018" summary="tickets is created for admin panel ( view + route+ dashboard link + but admin controller is not ok and its copy from bussiness controller">
+      <created>1542870624259</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1542870624259</updated>
+    </task>
+    <task id="LOCAL-00019" summary="this is a test for branch owner">
+      <created>1542871793955</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1542871793955</updated>
+    </task>
+    <task id="LOCAL-00020" summary="branch test">
+      <created>1542871955193</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1542871955193</updated>
+    </task>
+    <task id="LOCAL-00021" summary="branch test">
+      <created>1542872052007</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1542872052007</updated>
+    </task>
+    <task id="LOCAL-00022" summary="00">
+      <created>1542872973667</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1542872973667</updated>
+    </task>
+    <task id="LOCAL-00023" summary="categoty and country images is rewrite and both views are working now and show current image of each bussiness well!!!">
+      <created>1542877227979</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1542877227979</updated>
+    </task>
+    <task id="LOCAL-00024" summary="col-sm-3 added to show bussiness as logo because it was very big when we make browser small(mobile view) and I made it correct">
+      <created>1542877494362</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1542877494362</updated>
+    </task>
+    <task id="LOCAL-00025" summary="my favorites businesses view is correct( it could not show image of each businesses)">
+      <created>1542878278764</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1542878278764</updated>
+    </task>
+    <task id="LOCAL-00026" summary="country image for iraq and poland is ok">
+      <created>1542878454814</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1542878454814</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="296906000" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
   </component>
   <component name="ToolWindowManager">
     <frame x="606" y="69" width="748" height="879" extended-state="0" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.32267442" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.27345845" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16397415" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" visible="true" weight="0.20229885" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
       <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.3298731" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.3298731" />
@@ -653,7 +836,10 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/best2listorginal" />
     </ignored-roots>
+<<<<<<< HEAD
     <MESSAGE value="added image_path column to businesses table" />
+=======
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
     <MESSAGE value="add image input to create business view" />
     <MESSAGE value="add image input to create business view (edited)" />
     <MESSAGE value="added flag image to adminpanel and added responsive" />
@@ -670,21 +856,36 @@
     <MESSAGE value="reformed the model name of Slideshow&#10;social network view is added" />
     <MESSAGE value="added FAQ exept edit" />
     <MESSAGE value="business route bag fixed by khosrojerdi!!!" />
+<<<<<<< HEAD
     <MESSAGE value="ticket:&#10;user part is added(can send a message and visit progress of message)" />
     <option name="LAST_COMMIT_MESSAGE" value="ticket:&#10;user part is added(can send a message and visit progress of message)" />
   </component>
   <component name="editorHistoryManager">
+=======
+    <MESSAGE value="color of social networks is edited for showing the current color" />
+    <MESSAGE value="tickets is created for admin panel ( view + route+ dashboard link + but admin controller is not ok and its copy from bussiness controller" />
+    <MESSAGE value="this is a test for branch owner" />
+    <MESSAGE value="branch test" />
+    <MESSAGE value="00" />
+    <MESSAGE value="categoty and country images is rewrite and both views are working now and show current image of each bussiness well!!!" />
+    <MESSAGE value="col-sm-3 added to show bussiness as logo because it was very big when we make browser small(mobile view) and I made it correct" />
+    <MESSAGE value="my favorites businesses view is correct( it could not show image of each businesses)" />
+    <MESSAGE value="country image for iraq and poland is ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="country image for iraq and poland is ok" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/comment.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="90" selection-start-line="31" selection-start-column="90" selection-end-line="31" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
     <entry file="file://$PROJECT_DIR$/app/Comment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="31" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
         </state>
       </provider>
     </entry>
@@ -703,6 +904,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/test.blade.php" />
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/resources/views/business/favorite.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -731,6 +933,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -772,6 +976,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/BusinessImage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -780,6 +985,16 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Slideshow.php">
+=======
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_11_21_073840_create_slideshows_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/slideshow.php">
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_11_21_090846_create_social_network_table.php" />
@@ -821,20 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="93" column="69" selection-start-line="93" selection-start-column="69" selection-end-line="93" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/socialnetwork.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="76" column="98" selection-start-line="76" selection-start-column="98" selection-end-line="76" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/slideshow.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
@@ -842,18 +1043,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
+    <entry file="file://$PROJECT_DIR$/database/migrations/2018_11_21_131229_create_tickets_table.php" />
+    <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="172" column="16" selection-start-line="172" selection-start-column="8" selection-end-line="172" selection-end-column="16" />
-          <folding>
-            <element signature="e#40#57#0#PHP" expanded="true" />
-          </folding>
+<<<<<<< HEAD
+        <state relative-caret-position="326">
+          <caret line="76" column="98" selection-start-line="76" selection-start-column="98" selection-end-line="76" selection-end-column="98" />
+=======
+        <state relative-caret-position="374">
+          <caret line="25" column="75" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="75" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/business/ticket.blade.php" />
+    <entry file="file://$PROJECT_DIR$/resources/views/business/my_account_menu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="91" selection-start-line="23" selection-end-line="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="374">
           <caret line="25" column="75" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="75" />
         </state>
@@ -877,16 +1097,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="91" selection-start-line="23" selection-end-line="24" />
+=======
+        <state relative-caret-position="1406">
+          <caret line="74" column="18" selection-start-line="50" selection-start-column="12" selection-end-line="74" selection-end-column="18" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/show.blade.php">
+    <entry file="file://$PROJECT_DIR$/routes/console.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.editorconfig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
+        <state relative-caret-position="323">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/database/migrations/2018_11_21_073840_create_slideshows_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -968,19 +1196,78 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BusinessController.php">
+=======
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="208" column="58" selection-start-line="208" selection-start-column="58" selection-end-line="208" selection-end-column="58" />
+        <state relative-caret-position="534">
+          <caret line="187" selection-start-line="187" selection-end-line="187" />
           <folding>
             <element signature="e#40#57#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/socialnetwork.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Business.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding>
+            <element signature="e#23#62#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/BusinessImage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/BusinessController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2548">
+          <caret line="184" column="5" selection-start-line="184" selection-start-column="5" selection-end-line="184" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="34" column="54" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/business/favorite.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="343">
+          <caret line="208" column="58" selection-start-line="208" selection-start-column="58" selection-end-line="208" selection-end-column="58" />
+=======
+        <state relative-caret-position="266">
+          <caret line="14" column="210" selection-start-line="14" selection-start-column="210" selection-end-line="14" selection-end-column="210" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
+          <folding>
+            <element signature="e#881#905#0#HTML" expanded="true" />
+            <element signature="e#1161#1185#0#HTML" expanded="true" />
+            <element signature="e#1487#1511#0#HTML" expanded="true" />
+            <element signature="e#1758#1782#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -992,6 +1279,71 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
           <caret line="33" column="9" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+=======
+    <entry file="file://$PROJECT_DIR$/resources/views/country.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="10" selection-start-line="5" selection-start-column="3" selection-end-line="30" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="7" selection-start-line="7" selection-end-line="30" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Country.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="8" column="92" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/dashboard.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="94" column="63" lean-forward="true" selection-start-line="94" selection-start-column="63" selection-end-line="94" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/country.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/tickets.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+>>>>>>> 1633327cd9579200cc90ce531d47da0e8f625169
         </state>
       </provider>
     </entry>

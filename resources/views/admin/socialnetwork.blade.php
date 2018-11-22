@@ -10,6 +10,8 @@
                 <div class="form-group row">
                     <label for="icon" class="col-sm-4 col-form-label text-md-right">{{ __('icon *') }}</label>
 
+
+
                     <div class="col-md-6">
                         <input id="slideImage" type="text" class="form-control{{ $errors->has('icon') ? ' is-invalid' : '' }}" name="icon" autofocus required>
                         @if ($errors->has('icon'))
@@ -24,7 +26,7 @@
                     <label for="color" class="col-sm-4 col-form-label text-md-right">{{ __('color ') }}</label>
 
                     <div class="col-md-6">
-                        <input id="color" type="color" class="form-control{{ $errors->has('color') ? ' is-invalid' : '' }}" name="color" value="{{ old('color') }}" autofocus>
+                        <input style="display: inline; height: 45px" id="color" type="color" class="form-control{{ $errors->has('color') ? ' is-invalid' : '' }}" name="color" value="{{ old('color') }}" autofocus>
 
                         @if ($errors->has('altTag'))
                             <span class="invalid-feedback" role="alert">
