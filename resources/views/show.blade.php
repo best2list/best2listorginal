@@ -8,7 +8,7 @@
         <div class="media-body">
             <div class="bg-warning p-3 rounded-top shadow-sm">
                 {{ $business->title}}
-                <img class="align-self-start float-right mr-3 col-md-2" src="/{{ $business->image_path }}" alt="logo"/>
+                <img class="align-self-start float-right mr-3 col-md-2 col-sm-3" src="/{{ $business->image_path }}" alt="logo"/>
             </div>
             <div class="bg-white  p-3 mt-2">
                 <i class="fas fa-clipboard"></i> <strong>Sammery</strong> : {{ $business->summary }}
