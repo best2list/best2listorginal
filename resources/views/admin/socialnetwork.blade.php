@@ -10,6 +10,8 @@
                 <div class="form-group row">
                     <label for="icon" class="col-sm-4 col-form-label text-md-right">{{ __('icon *') }}</label>
 
+
+
                     <div class="col-md-6">
                         <input id="slideImage" type="text" class="form-control{{ $errors->has('icon') ? ' is-invalid' : '' }}" name="icon" autofocus required>
                         @if ($errors->has('icon'))
