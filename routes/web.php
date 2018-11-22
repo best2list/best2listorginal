@@ -69,6 +69,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::delete('/deletesocialnetwork/{id}','AdminController@deleteSocialNetwork')->name('deleteSocialNetwork');
     Route::delete('/FAQ/{id}','AdminController@destroyFAQ')->name('destroyFAQ');
     Route::get('/socialnetwork','AdminController@socialnetwork')->name('socialnetwork');
+    Route::get('/tickets','AdminController@tickets')->name('tickets');
     Route::post('/category/storecategory','AdminController@storeCategory')->name('storeCategory');
     Route::post('/country/storecountry','AdminController@storeCountry')->name('storeCountry');
     Route::delete('/category/{category_id}/delete', 'AdminController@categoryDestroy')->name('categoryDestroy');

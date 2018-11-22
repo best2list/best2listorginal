@@ -92,7 +92,7 @@
                                         <li><a href="{{ route('slideshow') }}">Slideshow</a> </li>
                                         <li><a href="{{ route('socialnetwork') }}">Social Network</a> </li>
                                         <li><a href="{{ route("FAQ") }}">FAQ</a> </li>
-                                        <li><a href="#">Tickets</a> </li>
+                                        <li><a href="{{ route("tickets") }}">Tickets</a> </li>
 
                                 </ul>
                             </div>
