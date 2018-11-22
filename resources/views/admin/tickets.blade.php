@@ -1,8 +1,4 @@
-@extends('layouts.app')
-@section('sidebar')
-    @include('business.my_account_menu')
-    @parent
-@endsection
+@extends('admin.dashboard')
 @section('content')
 
 

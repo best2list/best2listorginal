@@ -179,7 +179,7 @@ class AdminController extends Controller
     public function tickets()
     {
         $tickets = Ticket::where('user_id', Auth::user()->id)->get();
-        return view('business.ticket', compact('tickets'));
+        return view('admin.tickets', compact('tickets'));
     }
 }
 
