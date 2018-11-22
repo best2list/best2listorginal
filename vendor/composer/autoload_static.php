@@ -392,6 +392,7 @@ class ComposerStaticInit142b6733175dd1034516d8f0c83bdb3d
         'App\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'App\\Slideshow' => __DIR__ . '/../..' . '/app/Slideshow.php',
         'App\\SocialNetwork' => __DIR__ . '/../..' . '/app/SocialNetwork.php',
+        'App\\Ticket' => __DIR__ . '/../..' . '/app/Ticket.php',
         'App\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Barryvdh\\Debugbar\\Console\\ClearCommand' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Console/ClearCommand.php',
         'Barryvdh\\Debugbar\\Controllers\\AssetController' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/Controllers/AssetController.php',

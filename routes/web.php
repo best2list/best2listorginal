@@ -41,10 +41,13 @@ Route::post('/show/{id}/addcomment', 'HomeController@addComment')->name('addComm
 
 Route::group(['prefix'=>'mybusiness'],function(){
     Route::get('/','BusinessController@index')->name('index');
+    Route::post('/','BusinessController@store')->name('store');
     Route::get('/create','BusinessController@create')->name('create');
     Route::get('/favorites','BusinessController@showFavorite')->name('showFavorite');
     Route::get('/ticket','BusinessController@ticket')->name('ticket');
-    Route::post('/','BusinessController@store')->name('store');
+    Route::post('/storeticketsubject','BusinessController@storeTicketSubject')->name('storeTicketSubject');
+    Route::get('/{subject_id}/ticketsubject','BusinessController@ticketSubject')->name('ticketSubject');
+    Route::post('/{subject_id}/storeticket','BusinessController@storeTicket')->name('storeTicket');
     Route::get('/{business_id}','BusinessController@show')->name('show');
     Route::put('/{business_id}','BusinessController@update')->name('update');
     Route::delete('/{business_id}','BusinessController@destroy')->name('destroy');

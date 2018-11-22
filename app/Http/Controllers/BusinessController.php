@@ -7,6 +7,8 @@ use App\BusinessImage;
 use App\Category;
 use App\Country;
 use App\Ticket;
+use App\TicketCategory;
+use App\TicketSubject;
 use App\User;
 use App\Favorites;
 use Illuminate\Http\Request;
@@ -186,7 +188,37 @@ class BusinessController extends Controller
 
     public function ticket()
     {
-        $tickets = Ticket::where('user_id', Auth::user()->id)->get();
-        return view('business.ticket', compact('tickets'));
+        $ticketCategories = TicketCategory::all();
+        $ticketSubjects = TicketSubject::where('user_id', Auth::user()->id)->get();
+        return view('business.ticket', compact('ticketCategories', 'ticketSubjects'));
     }
+
+    public function storeTicketSubject(Request $request)
+    {
+        $ticketSubject = new TicketSubject;
+        $ticketSubject->subject = $request->subject;
+        $ticketSubject->description = $request->description;
+        $ticketSubject->ticket_cat_id = $request->ticket_cat_id;
+        $ticketSubject->user_id = Auth::user()->id;
+        $ticketSubject->save();
+        return back();
+    }
+
+    public function ticketSubject($subjectID)
+    {
+        $tickets = Ticket::where('subject_id', $subjectID)->get();
+        return view('business.sendticket', compact('tickets', 'subjectID'));
+    }
+
+    public function storeTicket($subjectID, Request $request)
+    {
+        $ticket = new Ticket;
+        $ticket->message = $request->message;
+        $ticket->subject_id = $subjectID;
+        $ticket->user_id = Auth::user()->id;
+        $ticket->save();
+        return back();
+    }
+
+
 }

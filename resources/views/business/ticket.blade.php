@@ -5,46 +5,88 @@
 @endsection
 @section('content')
 
-
     <div class="card">
-        {{--<div class="card-header">ticket</div>--}}
-        {{--<div class="card-body">--}}
+        <div class="card-header">create subject</div>
 
-            {{--@foreach($favorites as $favorite)--}}
-            {{--@if($favorite->hasBusiness($favorite->business_id)->type=='active')--}}
-            {{--<div class="media border-bottom mt-1">--}}
-            {{--<img class="align-self-start mr-3 col-md-2 " src="@if($favorite->hasBusiness($favorite->business_id)->image_path){{ $favorite->hasBusiness($favorite->business_id)->image_path }} @else /image/download.png @endif" alt="Generic placeholder image">--}}
-            {{--<div class="media-body">--}}
-            {{--<h4 class="mt-0 pt-1" style="font-size: 16px;"><a class="card-link text-primary" href="{{ route('showBusiness', $favorite->hasBusiness($favorite->business_id)->id) }}">{{ $favorite->hasBusiness($favorite->business_id)->title }}</a></h4>--}}
-            {{--<div class="text-muted mt-3" style="font-size: 13px;"><i class="fas fa-map-marker-alt"></i> {{ $favorite->hasBusiness($favorite->business_id)->hasCountry($favorite->hasBusiness($favorite->business_id)->country)->country }} , {{ $favorite->hasBusiness($favorite->business_id)->city }}</div>--}}
-            {{--<div class="mb-0 text-muted" style="font-size: 13px;"><i class="fas fa-phone"></i> {{ $favorite->hasBusiness($favorite->business_id)->phone }} - <i class="fas fa-fax"></i> {{ $favorite->hasBusiness($favorite->business_id)->fax }} </div>--}}
-            {{--<p class="mb-0 text-muted" style="font-size: 12px;"><i class="fas fa-clipboard"></i> {{ str_limit($favorite->hasBusiness($favorite->business_id)->summary,150) }} </p>--}}
-            {{--</div>--}}
-            {{--</div>--}}
-            {{--@endif--}}
-            {{--@endforeach--}}
-
-        {{--</div>--}}
-    {{--</div>--}}
-
-    <div class="card">
-        <div class="card-header">ticket</div>
         <div class="card-body">
+            <form method="POST" action="{{ route('storeTicketSubject') }}" aria-label="{{ __('storeTicketSubject') }}">
+                @csrf
 
-        @foreach($tickets as $ticket)
-            {{--@if($favorite->hasBusiness($favorite->business_id)->type=='active')--}}
+                <div class="form-group row">
+                    <label for="subject" class="col-sm-4 col-form-label text-md-right">{{ __('subject') }}</label>
 
+                    <div class="col-md-6">
+                        <input id="subject" type="text" class="form-control{{ $errors->has('subject') ? ' is-invalid' : '' }}" name="subject" value="{{ old('subject') }}" required autofocus>
 
-                    <div class="text-muted mt-3 mb-1" style="font-size: 13px;">{{ Auth::user()->username }} : {{ $ticket->message }}</div>
-                    <span class="text-white p-1 rounded @if($ticket->reply_status=='unseen') bg-danger @elseif($ticket->reply_status=='seen') bg-warning @else bg-success @endif" style="font-size: 13px;">{{ $ticket->reply_status }}</>
-                    {{--<h4 class="mt-0 pt-1" style="font-size: 16px;"><a class="card-link text-primary" href="{{ route('showBusiness', $favorite->hasBusiness($favorite->business_id)->id) }}">{{ $favorite->hasBusiness($favorite->business_id)->title }}</a></h4>--}}
-                    {{--<div class="text-muted mt-3" style="font-size: 13px;"><i class="fas fa-map-marker-alt"></i> {{ $favorite->hasBusiness($favorite->business_id)->hasCountry($favorite->hasBusiness($favorite->business_id)->country)->country }} , {{ $favorite->hasBusiness($favorite->business_id)->city }}</div>--}}
-                    {{--<div class="mb-0 text-muted" style="font-size: 13px;"><i class="fas fa-phone"></i> {{ $favorite->hasBusiness($favorite->business_id)->phone }} - <i class="fas fa-fax"></i> {{ $favorite->hasBusiness($favorite->business_id)->fax }} </div>--}}
-                    {{--<p class="mb-0 text-muted" style="font-size: 12px;"><i class="fas fa-clipboard"></i> {{ str_limit($favorite->hasBusiness($favorite->business_id)->summary,150) }} </p>--}}
+                        @if ($errors->has('subject'))
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('subject') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
 
-            {{--@endif--}}
-        @endforeach
+                <div class="form-group row">
+                    <label for="description" class="col-sm-4 col-form-label text-md-right">{{ __('description') }}</label>
 
+                    <div class="col-md-6">
+                        <input id="description" type="text" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ old('description') }}" autofocus>
+
+                        @if ($errors->has('description'))
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="ticket_cat_id" class="col-sm-4 col-form-label text-md-right">{{ __('ticket category') }}</label>
+
+                    <div class="col-md-6">
+                        <select id="ticket_cat_id"  class="form-control{{ $errors->has('ticket_cat_id') ? ' is-invalid' : '' }}" name="ticket_cat_id">
+                            @foreach($ticketCategories as $ticketCategory)
+                                <option value="{{ $ticketCategory->id }}">{{ $ticketCategory->name }}</option>
+                            @endforeach
+                        </select>
+                        @if ($errors->has('ticket_cat_id'))
+                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('ticket_cat_id') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group row mb-0">
+                    <div class="col-md-8 offset-md-4">
+                        <button type="submit" class="btn btn-primary">
+                            {{ __('insert') }}
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="card">
+        <div class="card-header">ticket subjects</div>
+        <div class="card-body">
+            <table class="table table-bordered text-center">
+                <tr>
+                    <td>id</td>
+                    <td>subject</td>
+                    <td>messages</td>
+                    <td>status</td>
+                </tr>
+                @foreach($ticketSubjects as $ticketSubject)
+                    <tr>
+                        <td>{{ $ticketSubject->id }}</td>
+                        <td><a class="text-primary" href="{{ route('ticketSubject',$ticketSubject->id) }}">{{ $ticketSubject->subject }}</a></td>
+                        <td>8</td>
+                        <td class="@if($ticketSubject->status == 'open') text-danger @else text-success @endif">{{ $ticketSubject->status }}</td>
+                    </tr>
+                @endforeach
+            </table>
         </div>
     </div>
 @endsection
