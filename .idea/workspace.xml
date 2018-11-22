@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="bb4315c4-b672-4ec5-8b5f-dac1f52edcd9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/country.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/country.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -124,12 +122,12 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="editorconfig" value="1" />
-          <entry key="php" value="26" />
+          <entry key="php" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="13" />
+          <entry key="Blade" value="16" />
           <entry key="PHP" value="13" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
@@ -137,15 +135,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="editorconfig" value="1" />
-          <entry key="php" value="119" />
-          <entry key="txt" value="286" />
+          <entry key="php" value="136" />
+          <entry key="txt" value="561" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="45" />
+          <entry key="Blade" value="62" />
           <entry key="PHP" value="74" />
-          <entry key="PLAIN_TEXT" value="287" />
+          <entry key="PLAIN_TEXT" value="562" />
         </counts>
       </usages-collector>
     </session>
@@ -180,10 +178,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/business/favorite.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/country.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="7" column="116" selection-start-line="7" selection-start-column="116" selection-end-line="7" selection-end-column="116" />
+              <caret line="7" column="115" lean-forward="true" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="115" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/category.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="86">
+              <caret line="8" column="117" lean-forward="true" selection-start-line="8" selection-start-column="117" selection-end-line="8" selection-end-column="117" />
             </state>
           </provider>
         </entry>
@@ -198,12 +214,16 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Country.php">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/resources/views/show.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
+        <entry file="file://$PROJECT_DIR$/app/Country.php">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -212,27 +232,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="8" column="92" selection-start-line="8" selection-start-column="70" selection-end-line="8" selection-end-column="92" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Business.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-              <folding>
-                <element signature="e#23#62#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/BusinessImage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -284,7 +283,6 @@
         <option value="$PROJECT_DIR$/resources/views/business/create.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_11_17_100110_create_business_images_table.php" />
         <option value="$PROJECT_DIR$/resources/views/business/edit.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/business/show.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2018_11_18_103014_create_favorites_table.php" />
         <option value="$PROJECT_DIR$/app/favorites.php" />
@@ -314,9 +312,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/socialnetwork.blade.php" />
         <option value="$PROJECT_DIR$/.editorconfig" />
-        <option value="$PROJECT_DIR$/resources/views/category.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/country.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/category.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/show.blade.php" />
       </list>
     </option>
   </component>
@@ -556,7 +555,7 @@
       <workItem from="1542693796997" duration="19796000" />
       <workItem from="1542779664890" duration="24059000" />
       <workItem from="1542866480008" duration="2854000" />
-      <workItem from="1542872908291" duration="3677000" />
+      <workItem from="1542872908291" duration="4566000" />
     </task>
     <task id="LOCAL-00001" summary="added image_path column to businesses table">
       <created>1542440170072</created>
@@ -712,11 +711,25 @@
       <option name="project" value="LOCAL" />
       <updated>1542872973667</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="categoty and country images is rewrite and both views are working now and show current image of each bussiness well!!!">
+      <created>1542877227979</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1542877227979</updated>
+    </task>
+    <task id="LOCAL-00024" summary="col-sm-3 added to show bussiness as logo because it was very big when we make browser small(mobile view) and I made it correct">
+      <created>1542877494362</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1542877494362</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295224000" />
+    <option name="totallyTimeSpent" value="296113000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
@@ -785,7 +798,9 @@
     <MESSAGE value="this is a test for branch owner" />
     <MESSAGE value="branch test" />
     <MESSAGE value="00" />
-    <option name="LAST_COMMIT_MESSAGE" value="00" />
+    <MESSAGE value="categoty and country images is rewrite and both views are working now and show current image of each bussiness well!!!" />
+    <MESSAGE value="col-sm-3 added to show bussiness as logo because it was very big when we make browser small(mobile view) and I made it correct" />
+    <option name="LAST_COMMIT_MESSAGE" value="col-sm-3 added to show bussiness as logo because it was very big when we make browser small(mobile view) and I made it correct" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/admin/category.blade.php">
@@ -999,27 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="13" column="90" selection-start-line="13" selection-start-column="90" selection-end-line="13" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/business/favorite.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/category.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="8" column="125" selection-start-line="8" selection-start-column="125" selection-end-line="8" selection-end-column="125" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Business.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="703">
@@ -1064,13 +1058,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1081,7 +1068,35 @@
     <entry file="file://$PROJECT_DIR$/resources/views/country.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" column="116" selection-start-line="7" selection-start-column="116" selection-end-line="7" selection-end-column="116" />
+          <caret line="7" column="115" lean-forward="true" selection-start-line="7" selection-start-column="95" selection-end-line="7" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/category.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="8" column="117" lean-forward="true" selection-start-line="8" selection-start-column="117" selection-end-line="8" selection-end-column="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="11" lean-forward="true" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/business/favorite.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="70" selection-start-line="14" selection-start-column="70" selection-end-line="14" selection-end-column="70" />
         </state>
       </provider>
     </entry>
