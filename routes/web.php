@@ -77,3 +77,4 @@ Route::group(['prefix'=>'admin'],function(){
     Route::put('/comment/{comment_id}/status','AdminController@commentStatus')->name('commentStatus');
     Route::delete('/comment/{comment_id}/delete','AdminController@commentDestroy')->name('commentDestroy');
 });
+
