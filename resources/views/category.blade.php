@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.two-col.two-col')
 @section('sidebar')
     @parent
 @endsection
@@ -6,14 +6,14 @@
 
     @foreach($businesses as $business)
         <div class="media border-bottom mt-1">
-            <img class="align-self-start mr-3 col-md-2 " src="@if($business->image_path){{ url($business->image_path)}} @else /image/download.png @endif" alt="Generic placeholder image">
+            <img class="align-self-start mr-3 col-2 " src="@if($business->image_path){{ url($business->image_path)}} @else /image/download.png @endif" alt="Generic placeholder image">
             <div class="media-body">
                 <h4 class="mt-0 pt-1" style="font-size: 16px;"><a class="card-link text-primary" href="{{ route('showBusiness', $business->id) }}">{{ $business->title }}</a></h4>
                 @auth()
                     <form method="post" action="{{ route('addToFavorite', $business->id) }}">
                         {{ method_field('put') }}
                         @csrf
-                        @if($business->countFavorite($business->id))
+                        @if($business->countFavorite($business->id)==0)
                             <input type="submit" value="add to favorite" class="btn-sm btn-warning float-right">
                         @else
                             <input type="submit" value="remove favorite" class="btn-sm btn-danger float-right">

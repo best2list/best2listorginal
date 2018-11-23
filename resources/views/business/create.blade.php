@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.two-col.two-col')
 @section('sidebar')
     @include('business.my_account_menu')
     @parent

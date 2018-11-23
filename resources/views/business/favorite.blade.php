@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.two-col.two-col')
 @section('sidebar')
     @include('business.my_account_menu')
     @parent
@@ -6,7 +6,7 @@
 @section('content')
 
                 <div class="card">
-                    <div class="card-header">All businesses</div>
+                    <div class="card-header">Favorite Businesses</div>
                     <div class="card-body">
 
                     @foreach($favorites as $favorite)
