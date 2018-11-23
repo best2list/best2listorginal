@@ -23,7 +23,7 @@ class AdminController extends Controller
     public function category()
     {
         $categories = Category::all();
-        return view('admin.category', compact('categories'));
+        return view('admin.category.category', compact('categories'));
     }
 
     public function storeCategory(Request $request)
@@ -46,7 +46,7 @@ class AdminController extends Controller
     public function country()
     {
         $countries = Country::all();
-        return view('admin.country', compact('countries'));
+        return view('admin.country.country', compact('countries'));
     }
 
     public function storeCountry(Request $request)
@@ -78,7 +78,7 @@ class AdminController extends Controller
     public function comment()
     {
         $comments = Comment::all();
-        return view('admin.comment', compact('comments'));
+        return view('admin.comment.comment', compact('comments'));
     }
 
     public function commentStatus($comment_id)
@@ -102,7 +102,7 @@ class AdminController extends Controller
     public function slideshow()
     {
         $slideImages = Slideshow::all();
-        return view('admin.slideshow', compact('slideImages'));
+        return view('admin.slideshow.slideshow', compact('slideImages'));
     }
 
     public function storeSlide(Request $request)
@@ -132,12 +132,11 @@ class AdminController extends Controller
     public function socialnetwork()
     {
         $socialNetworks = SocialNetwork::all();
-        return view('admin.socialnetwork', compact("socialNetworks"));
+        return view('admin.socialnetwork.socialnetwork', compact("socialNetworks"));
     }
 
     public function storeSocialNetwork(Request $request)
     {
-
         $socialNetwork= new SocialNetwork;
         $socialNetwork->icon = $request->icon;
         $socialNetwork->color = $request->color;
@@ -156,9 +155,7 @@ class AdminController extends Controller
     public function FAQ()
     {
         $faqs = Faq::all();
-        return view("admin.FAQ",compact("faqs"));
-
-
+        return view("admin.faq.FAQ",compact("faqs"));
     }
 
     public function storeFAQ(Request $request)
@@ -181,13 +178,13 @@ class AdminController extends Controller
     public function tickets()
     {
         $ticketSubjects = TicketSubject::all();
-        return view('admin.ticket', compact('ticketSubjects'));
+        return view('admin.ticket.ticket', compact('ticketSubjects'));
     }
 
     public function ticketSubject($subject_id)
     {
         $tickets = Ticket::where('subject_id', $subject_id)->get();
-        return view('admin.send-ticket', compact('tickets', 'subject_id'));
+        return view('admin.ticket.send-ticket', compact('tickets', 'subject_id'));
     }
 
     public function storeTicket($subject_id, Request $request)
