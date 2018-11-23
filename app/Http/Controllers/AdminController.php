@@ -8,6 +8,7 @@ use App\Faq;
 use App\slideshow;
 use App\SocialNetwork;
 use App\Ticket;
+use App\TicketSubject;
 use Illuminate\Http\Request;
 use App\Country;
 use Illuminate\Support\Facades\Auth;
@@ -176,10 +177,27 @@ class AdminController extends Controller
         $faqitem->delete();
         return back();
     }
+
     public function tickets()
     {
-        $tickets = Ticket::where('user_id', Auth::user()->id)->get();
-        return view('admin.tickets', compact('tickets'));
+        $ticketSubjects = TicketSubject::all();
+        return view('admin.ticket', compact('ticketSubjects'));
+    }
+
+    public function ticketSubject($subject_id)
+    {
+        $tickets = Ticket::where('subject_id', $subject_id)->get();
+        return view('admin.send-ticket', compact('tickets', 'subject_id'));
+    }
+
+    public function storeTicket($subject_id, Request $request)
+    {
+        $ticket = new Ticket;
+        $ticket->message = $request->message;
+        $ticket->subject_id = $subject_id;
+        $ticket->admin_id = Auth::user()->id;
+        $ticket->save();
+        return back();
     }
 }
 

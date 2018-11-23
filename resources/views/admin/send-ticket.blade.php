@@ -16,7 +16,7 @@
             @endforeach
         </div>
         <div class="card-body">
-            <form method="POST" action="{{ route('storeTicket',$subjectID) }}" aria-label="{{ __('storeTicket') }}">
+            <form method="POST" action="{{ route('adminStoreTicket',$subject_id) }}" aria-label="{{ __('storeTicket') }}">
                 @csrf
                 <div class="form-group row">
                     <label for="message" class="col-sm-4 col-form-label text-md-right">{{ __('message') }}</label>
