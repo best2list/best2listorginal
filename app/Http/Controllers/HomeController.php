@@ -7,6 +7,7 @@ use App\Category;
 use App\Comment;
 use App\Country;
 use App\Business;
+use App\Faq;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -57,5 +58,10 @@ class HomeController extends Controller
         $comment->user_id = Auth::user()->id;
         $comment->save();
         return back();
+    }
+
+    public function faq(){
+        $faqs = Faq::paginate(10);
+        return view('faq', compact('faqs'));
     }
 }

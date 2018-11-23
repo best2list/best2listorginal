@@ -34,10 +34,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/FAQ', 'HomeController@faq')->name('faq');
 Route::get('/category/{id}', 'HomeController@getCategory')->name('getCategory');
 Route::get('/country/{id}', 'HomeController@getCountry')->name('getCountry');
 Route::get('/show/{id}', 'HomeController@showBusiness')->name('showBusiness');
 Route::post('/show/{id}/addcomment', 'HomeController@addComment')->name('addComment');
+
 
 Route::group(['prefix'=>'mybusiness'],function(){
     Route::get('/','BusinessController@index')->name('index');

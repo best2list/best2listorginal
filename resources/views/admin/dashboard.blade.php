@@ -82,7 +82,7 @@
                 <div class="col-md-4">
                     @section('sidebar')
                         <div class="card">
-                            <div class="card-header">admin menu</div>
+                            <div class="card-header"><i class="fas fa-business-time"></i> Admin menu</div>
                             <div class="card-body">
                                 <ul>
 

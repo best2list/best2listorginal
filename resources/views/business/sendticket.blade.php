@@ -10,9 +10,9 @@
         <div class="card-body">
                 @foreach($tickets as $ticket)
                     @if($ticket->user_id)
-                        <div class="bg-primary text-white">{{ $ticket->user_id }}</div>
+                        <div class="bg-primary text-white p-1 mb-1 rounded">{{ Auth::user()->username }}</div>
                     @else
-                        <div class="bg-success text-white">{{ $ticket->admin_id }}</div>
+                        <div class="bg-success text-white p-1 mb-1 rounded">{{ $ticket->admin_id }}</div>
                     @endif
                         <div>{{ $ticket->message }}</div>
                         <span class="@if($ticket->message_status == 'unseen') text-danger @elseif($ticket->message_status == 'seen') text-primary @else text-success @endif">{{ $ticket->status }}</span>
