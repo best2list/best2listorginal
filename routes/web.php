@@ -70,6 +70,8 @@ Route::group(['prefix'=>'admin'],function(){
     Route::put('/{id}/countryUpdate','admin\CountryController@update')->name('update_country');
     Route::put('/{id}','admin\CategoryController@update')->name('update_category');
     Route::get('/FAQ', 'admin\FaqController@index')->name('FAQ');
+    Route::get('/{id}/edit_faq', 'admin\FaqController@edit')->name('edit_faq');
+    Route::put('/{id}/faqUpdate','admin\FaqController@update')->name('update_faq');
     Route::get('/menu', 'admin\MenuController@index')->name('menu');
     Route::post('/menu', 'admin\MenuController@store')->name('storemenu');
     Route::get('{id}/showmenu', 'admin\MenuController@show')->name('showmenu');

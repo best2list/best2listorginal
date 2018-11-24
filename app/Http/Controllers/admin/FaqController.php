@@ -62,7 +62,8 @@ class FaqController extends Controller
      */
     public function edit($id)
     {
-        //
+      $faq = faq::find($id);
+      return view('admin.faq.edit_faq', compact('faq'));
     }
 
     /**
@@ -74,7 +75,12 @@ class FaqController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $faq= Faq::find($id);
+      $faq->question = $request->question;
+      $faq->answer = $request->answer;
+      $faq->save();
+      return redirect()->route('admin');
+
     }
 
     /**
