@@ -1,6 +1,7 @@
     <div class="alert-primary">
         <div class="card-body">
             <ul class="list-unstyled">
+                <a class="nav-link d-inline" href="{{ route('faq') }}"><li class="d-inline">FAQ</li></a>
                 @foreach($menus as $menu)
                     <a class="nav-link d-inline" href="{{ route('showMenu', $menu->id) }}"><li class="d-inline">{{ $menu->title }}</li></a>
                 @endforeach
