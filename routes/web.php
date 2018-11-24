@@ -69,11 +69,17 @@ Route::group(['prefix'=>'admin'],function(){
     Route::put('/{id}/countryUpdate','admin\CountryController@update')->name('update_country');
     Route::put('/{id}','admin\CategoryController@update')->name('update_category');
     Route::get('/FAQ', 'admin\FaqController@index')->name('FAQ');
+    Route::get('/menu', 'admin\MenuController@index')->name('menu');
+    Route::post('/menu', 'admin\MenuController@store')->name('storemenu');
+    Route::get('{id}/showmenu', 'admin\MenuController@show')->name('showmenu');
+    Route::get('{id}/editmenu', 'admin\MenuController@edit')->name('editmenu');
     Route::post('/storefaq','admin\FaqController@store')->name('storeFAQ');
     Route::get('/comment','admin\CommentController@index')->name('comment');
     Route::get('/slideshow','admin\SlideshowController@index')->name('slideshow');
     Route::post('/storeslide','admin\SlideshowController@store')->name('storeSlide');
     Route::post('/storesocialnetwork','admin\SocialNetworkController@store')->name('storeSocialNetwork');
+    Route::put('/{id}/updatemenu', 'admin\MenuController@update')->name('updatemenu');
+    Route::delete('/{id}/deletemenu', 'admin\MenuController@destroy')->name('destroymenu');
     Route::delete('/deleteslide/{id}','admin\SlideshowController@destroy')->name('destroySlide');
     Route::delete('/deletesocialnetwork/{id}','admin\SocialNetworkController@destroy')->name('deleteSocialNetwork');
     Route::delete('/FAQ/{id}','admin\FaqController@destroy')->name('destroyFAQ');
