@@ -63,7 +63,11 @@ Route::group(['prefix'=>'mybusiness'],function(){
 Route::group(['prefix'=>'admin'],function(){
     Route::get('/','AdminController@index')->name('admin');
     Route::get('/country', 'admin\CountryController@index')->name('country');
+    Route::get('/{id}/edit_country', 'admin\CountryController@edit')->name('edit_country');
     Route::get('/category', 'admin\CategoryController@index')->name('category');
+    Route::get('/{id}/edit_category', 'admin\CategoryController@edit')->name('edit_category');
+    Route::put('/{id}/countryUpdate','admin\CountryController@update')->name('update_country');
+    Route::put('/{id}','admin\CategoryController@update')->name('update_category');
     Route::get('/FAQ', 'admin\FaqController@index')->name('FAQ');
     Route::post('/storefaq','admin\FaqController@store')->name('storeFAQ');
     Route::get('/comment','admin\CommentController@index')->name('comment');
@@ -84,4 +88,3 @@ Route::group(['prefix'=>'admin'],function(){
     Route::put('/comment/{comment_id}/status','admin\CommentController@commentStatus')->name('commentStatus');
     Route::delete('/comment/{comment_id}/delete','admin\CommentController@destroy')->name('commentDestroy');
 });
-

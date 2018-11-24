@@ -14,7 +14,7 @@
                             {{ method_field('put') }}
                             @csrf
                             @if($business->countFavorite($business->id)==0)
-                                <input type="submit" value="add to favorite" class="btn-sm btn-warning float-right">
+                                <input type="submit" value="add to favorite" class="btn-sm btn- float-right">
                             @else
                                 <input type="submit" value="remove favorite" class="btn-sm btn-danger float-right">
                             @endif

@@ -6,7 +6,7 @@
 
     <div class="media border-bottom mt-1">
         <div class="media-body">
-            <div class="bg-warning p-3 rounded-top shadow-sm">
+            <div class="bg-danger p-3 rounded-top shadow-sm">
                 {{ $business->title}}
                 <img class="align-self-start float-right mr-3 col-md-2 col-sm-3" src="/{{ $business->image_path }}" alt="logo"/>
             </div>

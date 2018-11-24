@@ -73,7 +73,9 @@ class CountryController extends Controller
      */
     public function edit($id)
     {
-        //
+      $country = Country::find($id);
+      return view('admin.country.edit_country', compact('country'));
+
     }
 
     /**
@@ -85,7 +87,20 @@ class CountryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $country = Country::find($id);
+        $country->country = $request->country;
+        if ($request->file('flag')) {
+            $flag = $request->file('flag');
+            $newName = date('Y_m_d_H_i_s') . '_' . $request->country . "." . $flag->getClientOriginalExtension();
+            $newpath = 'images/country/';
+            $flag->move($newpath, $newName);
+            if (file_exists($country->flag))
+                unlink(public_path($country->flag));
+            $country->flag = $newpath . $newName;
+        }
+        $country->save();
+        return redirect()->route('admin');
+
     }
 
     /**
