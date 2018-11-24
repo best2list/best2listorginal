@@ -84,6 +84,8 @@ Route::group(['prefix'=>'admin'],function(){
     Route::delete('/deletesocialnetwork/{id}','admin\SocialNetworkController@destroy')->name('deleteSocialNetwork');
     Route::delete('/FAQ/{id}','admin\FaqController@destroy')->name('destroyFAQ');
     Route::get('/socialnetwork','admin\SocialNetworkController@index')->name('socialnetwork');
+    Route::get('/{id}/edit_socialnetwork', 'admin\SocialNetworkController@edit')->name('edit_socialnetwork');
+    Route::put('/{id}/socialnetworkUpdate','admin\SocialNetworkController@update')->name('update_socialnetwork');
     Route::get('/tickets','admin\TicketController@index')->name('tickets');
     Route::get('/{subject_id}/ticketsubject','admin\TicketController@ticketSubject')->name('adminTicketSubject');
     Route::post('/{subject_id}/storeticket','admin\TicketController@store')->name('adminStoreTicket');

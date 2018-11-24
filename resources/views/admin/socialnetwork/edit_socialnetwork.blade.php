@@ -5,15 +5,17 @@
         <div class="card-header">upload images</div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route("storeSocialNetwork") }}" aria-label="{{ __('social_network') }}">
+            <form method="POST" action="{{ route("update_socialnetwork",$socialnetwork->id) }}" aria-label="{{ __('social_network') }}">
                 @csrf
+                {{ method_field('put') }}
+
                 <div class="form-group row">
                     <label for="icon" class="col-sm-4 col-form-label text-md-right">{{ __('icon *') }}</label>
 
 
 
                     <div class="col-md-6">
-                        <input id="slideImage" type="text" class="form-control{{ $errors->has('icon') ? ' is-invalid' : '' }}" name="icon" autofocus required>
+                        <input id="slideImage" type="text" class="form-control{{ $errors->has('icon') ? ' is-invalid' : '' }}" name="icon" autofocus required value="{{ __($socialnetwork->icon) }}">
                         @if ($errors->has('icon'))
                             <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('icon') }}</strong>
@@ -26,7 +28,7 @@
                     <label for="color" class="col-sm-4 col-form-label text-md-right">{{ __('color ') }}</label>
 
                     <div class="col-md-6">
-                        <input style="display: inline; height: 45px" id="color" type="color" class="form-control{{ $errors->has('color') ? ' is-invalid' : '' }}" name="color" value="{{ old('color') }}" autofocus>
+                        <input style="display: inline; height: 45px" id="color" type="color" class="form-control{{ $errors->has('color') ? ' is-invalid' : '' }}" name="color" value="{{ __($socialnetwork->color) }}" autofocus>
 
                         @if ($errors->has('altTag'))
                             <span class="invalid-feedback" role="alert">
@@ -40,7 +42,7 @@
                     <label for="address" class="col-sm-4 col-form-label text-md-right">{{ __('address (URL)') }}</label>
 
                     <div class="col-md-6">
-                        <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" autofocus>
+                        <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ __($socialnetwork->address) }}" autofocus>
 
                         @if ($errors->has('address'))
                             <span class="invalid-feedback" role="alert">
@@ -61,30 +63,6 @@
         </div>
     </div>
 <br>
-    <table class="table table-bordered" >
-        <tr class="table-active">
-            <td>icon</td>
-            <td>address (URL)</td>
-            <td>edit</td>
-            <td>delete</td>
-        </tr>
-    @foreach($socialNetworks as $socialNetwork)
-            <tr class="text-center">
-                <td ><a  href="{{ $socialNetwork->address }}" style="color: {{ $socialNetwork->color }}; font-size: 35px ">
 
-                        {!! $socialNetwork->icon !!}
-                    </a></td>
-                <td>{{ $socialNetwork->address }}</td>
-                <td><a href="{{ route('edit_socialnetwork', $socialNetwork->id) }}">edit</a></td>
-                <td> <form method="post" action="{{ route("deleteSocialNetwork",$socialNetwork->id) }}" aria-label="{{ __('deleteSocialNetwork') }}">
-                        {{method_field('delete')}}
-                        @csrf
-                        <input type="submit" value="delete" class="btn btn-danger"/>
-                    </form></td>
-            </tr>
-
-
-    @endforeach
-    </table>
 
 @endsection
