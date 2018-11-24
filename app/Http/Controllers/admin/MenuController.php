@@ -97,4 +97,15 @@ class MenuController extends Controller
         $menu->delete();
         return back();
     }
+
+    public function changeStatus($id)
+    {
+        $menu = Menu::find($id);
+        if($menu->status == 'passive')
+            $menu->status = 'active';
+        else
+            $menu->status = 'passive';
+        $menu->save();
+        return back();
+    }
 }

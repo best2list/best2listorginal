@@ -37,6 +37,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/FAQ', 'HomeController@faq')->name('faq');
 Route::get('/category/{id}', 'HomeController@getCategory')->name('getCategory');
 Route::get('/country/{id}', 'HomeController@getCountry')->name('getCountry');
+Route::get('/menu/{id}', 'HomeController@showMenu')->name('showMenu');
 Route::get('/show/{id}', 'HomeController@showBusiness')->name('showBusiness');
 Route::post('/show/{id}/addcomment', 'HomeController@addComment')->name('addComment');
 
@@ -81,6 +82,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::post('/storeslide','admin\SlideshowController@store')->name('storeSlide');
     Route::post('/storesocialnetwork','admin\SocialNetworkController@store')->name('storeSocialNetwork');
     Route::put('/{id}/updatemenu', 'admin\MenuController@update')->name('updatemenu');
+    Route::put('/{id}/changestatus', 'admin\MenuController@changeStatus')->name('changeStatus');
     Route::delete('/{id}/deletemenu', 'admin\MenuController@destroy')->name('destroymenu');
     Route::delete('/deleteslide/{id}','admin\SlideshowController@destroy')->name('destroySlide');
     Route::delete('/deletesocialnetwork/{id}','admin\SocialNetworkController@destroy')->name('deleteSocialNetwork');

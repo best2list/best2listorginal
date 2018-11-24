@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Category;
 use App\Country;
+use App\Menu;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -24,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
         view()->composer('layouts.two-col.two-col', function ($view) {
             $view->with('countries', Country::all());
             $view->with('categories', Category::with('children')->whereNull('parent_id')->orderBy('title', 'asc')->get());
+            $view->with('menus', Menu::where('status', 'active')->get());
         });
 //
 //        view()->composer('*', function($view) {

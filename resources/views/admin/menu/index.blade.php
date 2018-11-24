@@ -59,11 +59,17 @@
                                 <td>delete</td>
                             </tr>
                             @foreach($menus as $menu)
-                                <tr>
+                                <tr class="@if($menu->status=='passive') alert alert-danger @else alert alert-success @endif">
                                     <td>{{ $menu->id }}</td>
                                     <td><a href="{{ route('showmenu', $menu->id) }}">{{ $menu->title }}</a></td>
                                     <td>{{ str_limit($menu->text, 300) }}</td>
-                                    <td><a href="">{{ $menu->id }}</a></td>
+                                    <td>
+                                        <span>{{ $menu->status }}</span>
+                                        <form action="{{ route('changeStatus', $menu->id) }}" method="post">
+                                            {{ method_field('put') }}
+                                            @csrf
+                                            <input type="submit" value="change status" class="btn btn-primary">
+                                        </form></td>
                                     <td><a href="{{ route('editmenu', $menu->id) }}">edit</a></td>
                                     <td><form action="{{ route('destroymenu', $menu->id) }}" method="post">
                                             {{ method_field('delete') }}
