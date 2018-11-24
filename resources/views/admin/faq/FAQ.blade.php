@@ -62,7 +62,7 @@
                             <td>{{ $faq->id }}</td>
                             <td>{{ $faq->question }}</td>
                             <td>{{ $faq->answer }}</td>
-                            <td><a href="">edit</a> </td>
+                            <td><a href="{{ route('edit_faq', $faq->id) }}">edit</a></td>
                             <td><form action="{{ route("destroyFAQ",$faq->id) }}" method="post">
                                     {{ method_field('delete') }}
                                     @csrf
