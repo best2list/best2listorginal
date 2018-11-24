@@ -64,7 +64,9 @@ class SocialNetworkController extends Controller
      */
     public function edit($id)
     {
-        //
+      $socialnetwork = SocialNetwork::find($id);
+      return view('admin.socialnetwork.edit_socialnetwork', compact("socialnetwork"));
+
     }
 
     /**
@@ -76,7 +78,12 @@ class SocialNetworkController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $socialNetwork= SocialNetwork::find($id);
+      $socialNetwork->icon = $request->icon;
+      $socialNetwork->color = $request->color;
+      $socialNetwork->address = $request->address;
+      $socialNetwork->save();
+      return redirect()->route('admin');
     }
 
     /**
