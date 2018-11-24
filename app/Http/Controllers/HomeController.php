@@ -8,6 +8,7 @@ use App\Comment;
 use App\Country;
 use App\Business;
 use App\Faq;
+use App\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -63,5 +64,11 @@ class HomeController extends Controller
     public function faq(){
         $faqs = Faq::paginate(10);
         return view('faq', compact('faqs'));
+    }
+
+    public function showMenu($id)
+    {
+        $menu = Menu::find($id);
+        return view('show-menu', compact('menu'));
     }
 }
