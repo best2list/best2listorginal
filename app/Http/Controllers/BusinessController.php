@@ -220,5 +220,4 @@ class BusinessController extends Controller
         return back();
     }
 
-
 }
