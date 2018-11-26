@@ -53,6 +53,7 @@ Route::group(['prefix'=>'mybusiness'],function(){
     Route::post('/{subject_id}/storeticket','BusinessController@storeTicket')->name('storeTicket');
     Route::get('/{business_id}','BusinessController@show')->name('show');
     Route::put('/{business_id}','BusinessController@update')->name('update');
+    Route::put('/{subject_id}/changeTicketStatus','BusinessController@changeTicketStatus')->name('changeTicketStatus');
     Route::delete('/{business_id}','BusinessController@destroy')->name('destroy');
     Route::get('/{business_id}/edit','BusinessController@edit')->name('edit');
     Route::post('/{business_id}/imageupload','BusinessController@businessImageUpload')->name('businessImageUpload');
@@ -93,6 +94,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/tickets','admin\TicketController@index')->name('tickets');
     Route::get('/{subject_id}/ticketsubject','admin\TicketController@ticketSubject')->name('adminTicketSubject');
     Route::post('/{subject_id}/storeticket','admin\TicketController@store')->name('adminStoreTicket');
+    Route::put('/{subject_id}/changeTicketStatus','admin\TicketController@changeTicketStatus')->name('changeTicketStatus');
     Route::post('/category/storecategory','admin\CategoryController@store')->name('storeCategory');
     Route::post('/country/storecountry','admin\CountryController@store')->name('storeCountry');
     Route::delete('/category/{category_id}/delete', 'admin\CategoryController@destroy')->name('categoryDestroy');

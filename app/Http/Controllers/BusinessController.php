@@ -44,7 +44,7 @@ class BusinessController extends Controller
     public function store(Request $request)
     {
         $business = new Business;
-        $business->user_id = Auth::user()->id;
+        $business->user_id= Auth::user()->id;
         $business->title = $request->title;
         $business->summary = $request->summary;
         $business->description = $request->description;
@@ -206,8 +206,9 @@ class BusinessController extends Controller
 
     public function ticketSubject($subjectID)
     {
-        $tickets = Ticket::where('subject_id', $subjectID)->get();
-        return view('business.sendticket', compact('tickets', 'subjectID'));
+        $ticketSubjectStatus = TicketSubject::find($subjectID);
+        $tickets = TicketSubject::where('user_id', Auth::user()->id)->find($subjectID)->tickets()->get();
+        return view('business.sendticket', compact('tickets', 'ticketSubjectStatus'));
     }
 
     public function storeTicket($subjectID, Request $request)
@@ -220,4 +221,14 @@ class BusinessController extends Controller
         return back();
     }
 
+    public function changeTicketStatus($id)
+    {
+        $ticketSubject = TicketSubject::find($id);
+        if($ticketSubject->status == 'open')
+            $ticketSubject->status = 'close';
+        else
+            $ticketSubject->status = 'open';
+        $ticketSubject->save();
+        return back();
+    }
 }

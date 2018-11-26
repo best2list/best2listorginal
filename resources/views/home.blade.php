@@ -20,7 +20,7 @@
                             @endif
                         </form>
                         @endauth
-                    <div class="text-muted mt-3" style="font-size: 13px;"><i class="fas fa-map-marker-alt"></i> {{ $business->hasCountry($business->country)->country }} , {{ $business->city }}</div>
+                    <div class="text-muted mt-0" style="font-size: 13px;"><i class="fas fa-map-marker-alt"></i> {{ $business->hasCountry($business->country)->country }} , {{ $business->city }}</div>
                     <div class="mb-0 text-muted" style="font-size: 13px;"><i class="fas fa-phone"></i> {{ $business->phone }} - <i class="fas fa-fax"></i> {{ $business->fax }} </div>
                     <p class="mb-0 text-muted" style="font-size: 12px;"><i class="fas fa-clipboard"></i> {{ str_limit($business->summary,80) }} </p>
                 </div>

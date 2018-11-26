@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Ticket;
@@ -93,9 +94,32 @@ class TicketController extends Controller
         //
     }
 
+    /**
+     * @param $subject_id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function ticketSubject($subject_id)
     {
-        $tickets = Ticket::where('subject_id', $subject_id)->get();
-        return view('admin.ticket.send-ticket', compact('tickets', 'subject_id'));
+
+        $tickets = TicketSubject::find($subject_id)->tickets()->get();
+        $ticketSubject = TicketSubject::find($subject_id);
+//        $closeTicketSubjects = TicketSubject::find($subject_id)->tickets()->whereDate('created_at', '<', Carbon::today()->subDays( 2 ));
+//        return dd($closeTicketSubjects);
+//        foreach ($closeTicketSubjects as $closeTicketSubject) {
+//            $closeTicketSubject->satatus = 'close';
+//            $closeTicketSubject->save();
+//        }
+        return view('admin.ticket.send-ticket', compact('tickets', 'ticketSubject'));
+    }
+
+    public function changeTicketStatus($id)
+    {
+        $ticketSubject = TicketSubject::find($id);
+        if($ticketSubject->status == 'open')
+            $ticketSubject->status = 'close';
+        else
+            $ticketSubject->status = 'open';
+        $ticketSubject->save();
+        return back();
     }
 }
