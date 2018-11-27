@@ -1,53 +1,78 @@
-[![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)](https://travis-ci.org/badges/badgerbadgerbadger)
-[![Dependency Status](http://img.shields.io/gemnasium/badges/badgerbadgerbadger.svg?style=flat-square)](https://gemnasium.com/badges/badgerbadgerbadger)
-[![Coverage Status](http://img.shields.io/coveralls/badges/badgerbadgerbadger.svg?style=flat-square)](https://coveralls.io/r/badges/badgerbadgerbadger)
-[![Code Climate](http://img.shields.io/codeclimate/github/badges/badgerbadgerbadger.svg?style=flat-square)](https://codeclimate.com/github/badges/badgerbadgerbadger)
-[![Github Issues](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/issues.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/issues)
-[![Pending Pull-Requests](http://githubbadges.herokuapp.com/badges/badgerbadgerbadger/pulls.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger/pulls)
-[![Gem Version](http://img.shields.io/gem/v/badgerbadgerbadger.svg?style=flat-square)](https://rubygems.org/gems/badgerbadgerbadger)
-[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
-[![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
-# Badger
+## Best2List
 
-Because I grow weary of copy-n-pasting the badge URLs into the README of every project, and the [img.shields.io](http://img.shields.io) API now supports all of the services I use
 
-## Usage
 
-Install it
+This Website Was Created For All Businesses In The World Which Want To Be Seen.
 
-    gem install badgerbadgerbadger
+## Basic Features
+ 
+ 
+ 
+You Can Give Your Business To Us To Make Your Business Bolder Than Past.You Can Describe Your Company As Well As Possible With a Lot Of Amazing Facilities.Just Try And Enjoy It.
+Bellow We Will Show You Some Of Our Basic Features :
+1.You Can Add Unlimited Business.
+2.You Can Make Your Business as Known Easily By Some More Details!!
+3.You Can Use Our User Friendly Interface With New Facilities And Also Special Features.
 
-or add it to your Gemfile
+And ...
+ 
+## Prerequisites
 
-    gem 'badgerbadgerbadger'
-    bundle
 
-Then
 
-    badger badge
-    [![Build Status](http://img.shields.io/travis/doge/wow.svg)](https://travis-ci.org/doge/wow)
-    [![Dependency Status](http://img.shields.io/gemnasium/doge/wow.svg)](https://gemnasium.com/doge/wow)
-    [![Coverage Status](http://img.shields.io/coveralls/doge/wow.svg)](https://coveralls.io/r/doge/wow)
-    [![Code Climate](http://img.shields.io/codeclimate/github/doge/wow.svg)](https://codeclimate.com/github/doge/wow)
-    [![Gem Version](http://img.shields.io/gem/v/suchgem.svg)](https://rubygems.org/gems/suchgem)
-    [![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
-    [![Badges](http://img.shields.io/:badges-7/7-ff6799.svg)](https://github.com/badges/badgerbadgerbadger)
+You Just Need Enter Our URL!!!
 
-ready to paste into the top of your README (with the correct URLs for your repo)
+## Running the tests
 
-You can read about Badger's Opinions in the help text [here](https://github.com/pikesley/badger/blob/master/DESC.md)
 
-If you're on a Mac, pipe the output into `pbcopy` to add the stuff directly to your clipboard:
 
-    badger badge | pbcopy
+We Made You a Tutorial Of Our Services And You Can Test All Part Of Our Website  Especially User Panel (Your Own Panel as a User)
 
-## Help me make it better
 
-    git clone https://github.com/pikesley/badger
-    cd badger
-    bundle
-    rake
+## Versioning
 
-### Adding a new license
 
-If you'd like badgerbadgerbadger to support a license we don't currently have, please see the note at the top of the [licenses config file](https://github.com/badges/badgerbadgerbadger/blob/master/config/licenses.yaml#L6-L7)
+
+Our Current Version Is 1.0.0
+
+## Releases
+
+
+
+Good News!!!
+We Are Working On New Version Now !!!
+
+
+## Built With
+
+
+
+* [PHP](http://www.php.net/) - The web hole programming language used
+* [Laravel](https://laravel.com/) - The web framework used
+* [Vue.js](https://vuejs.org/) - Used to Create Front-End development
+* [Bootstrap](https://getbootstrap.com/) - Used to make our website enjoyable
+
+## Authors
+
+
+
+Aftab Department Of Development . All Rights Reserved.
+See Also [Aftab](http://www.aftabir.com/) who participated in this project.
+
+## FAQ & Contact
+
+
+
+Frequently asked questions are collected in our FAQ doc.
+
+The Firecracker community can be contacted in the following ways:
+
+Open a GitHub issue in this repository.
+Email the maintainers at aftab@aftab.info.com.
+Community email list: coming soon.
+
+## License
+
+
+
+This project is licensed under the ... License - see the [LICENSE.md](LICENSE.md) file for details
