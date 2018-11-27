@@ -1,4 +1,4 @@
-@extends('admin.dashboard')
+@extends('admin.layouts.app')
 @section('content')
 
     <div class="card">
@@ -49,24 +49,24 @@
     <br/>
 
                     <div class="card-body">
-                        <table class="table table-bordered">
+                        <table class="table table-bordered table-responsive-md">
                             <tr class="table-active">
                                 <td>category ID</td>
                                 <td>category name</td>
                                 <td>parent ID</td>
-                                <td>edit</td>
-                                <td>delete</td>
+                                <td></td>
                             </tr>
                             @foreach($categories as $category)
                                 <tr>
                                     <td>{{ $category->id }}</td>
                                     <td>{{ $category->title }}</td>
                                     <td>{{ $category->parent_id }}</td>
-                                    <td><a href="{{ route("edit_category",$category->id) }}">edit</a> </td>
-                                    <td><form action="{{ route('categoryDestroy', $category->id) }}" method="post">
+                                    <td>
+                                        <a class="btn-sm btn-warning text-center" href="{{ route("edit_category",$category->id) }}"><i class="fas fa-edit"></i></a>
+                                        <form class="d-inline" action="{{ route('categoryDestroy', $category->id) }}" method="post">
                                             {{ method_field('delete') }}
                                             @csrf
-                                            <input type="submit" value="delete" class="btn btn-danger">
+                                            <button type="submit" class="btn-sm btn-danger text-dark"><i class="fas fa-trash-alt"></i></button>
                                         </form>
                                     </td>
                                 </tr>

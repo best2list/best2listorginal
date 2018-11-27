@@ -1,9 +1,8 @@
-@extends('admin.dashboard')
+@extends('admin.layouts.app')
 @section('content')
 
                 <div class="card">
                     <div class="card-header">create business</div>
-
                     <div class="card-body">
                       <form method="POST" action="{{ route('update_category', $category->id) }}" aria-label="{{ __('update_category') }}">
                           @csrf
