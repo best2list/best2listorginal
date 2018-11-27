@@ -6,13 +6,12 @@
         <div class="card-body">
             @foreach($tickets as $ticket)
                 @if($ticket->user_id)
-                    <div class="p-1 rounded bg-primary text-white">{{ $ticket->hasUsername($ticket->user_id) }}</div>
+                    <div class="p-1 rounded bg-primary text-white">{{ $ticket->hasUsername($ticket->user_id) }} <span>{{ $ticket->message_status }}</span></div>
                 @else
-                    <div class="p-1 rounded bg-success text-white">{{ $ticket->hasUsername($ticket->admin_id) }}</div>
+                    <div class="p-1 rounded bg-success text-white">{{ $ticket->hasUsername($ticket->admin_id) }} <span>{{ $ticket->message_status }}</span></div>
                 @endif
                 <div>{{ $ticket->message }}</div>
                 <span class="@if($ticket->message_status == 'unseen') text-danger @elseif($ticket->message_status == 'seen') text-primary @else text-success @endif">{{ $ticket->status }}</span>
-                <hr/>
             @endforeach
         </div>
         <div class="card-body">

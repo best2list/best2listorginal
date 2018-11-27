@@ -8,6 +8,7 @@
                 <tr>
                     <td>id</td>
                     <td>subject</td>
+                    <td>last message status</td>
                     <td>status</td>
                     <td>category</td>
                     <td>created at</td>
@@ -17,7 +18,12 @@
                 @foreach($ticketSubjects as $ticketSubject)
                     <tr>
                         <td>{{ $ticketSubject->id }}</td>
-                        <td><a class="text-primary" href="{{ route('adminTicketSubject', $ticketSubject->id) }}">{{ $ticketSubject->subject }} <span class="badge badge-secondary">{{ $ticketSubject->tickets()->count() }}</span></a></td>
+                        <td><a class="text-primary" href="{{ route('adminTicketSubject', $ticketSubject->id) }}">{{ $ticketSubject->subject }}
+                                <span class="badge badge-secondary">{{ $ticketSubject->tickets()->count() }}</span>
+                                @if($ticketSubject->tickets()->where('message_status', 'unseen')->whereNotNull('user_id')->count() > 0)<span class="badge badge-danger">new  {{ $ticketSubject->tickets()->where('message_status', 'unseen')->count() }} </span>@endif
+                            </a>
+                        </td>
+                        <td> @if($ticketSubject->tickets()->latest()->value('user_id')!= null) <span class="text-danger">must reply </span>@else <span class="text-success">replied </span> @endif</td>
                         <td class="@if($ticketSubject->status == 'open') text-danger @else text-success @endif">{{ $ticketSubject->status }}
                             <form action="{{ route('changeTicketStatus', $ticketSubject->id) }}" method="post">
                                 {{ method_field('put') }}

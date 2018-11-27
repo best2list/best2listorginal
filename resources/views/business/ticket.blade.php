@@ -84,7 +84,10 @@
                 @foreach($ticketSubjects as $ticketSubject)
                     <tr>
                         <td>{{ $ticketSubject->id }}</td>
-                        <td><a class="text-primary" href="{{ route('adminTicketSubject', $ticketSubject->id) }}">{{ $ticketSubject->subject }} <span class="badge badge-secondary">{{ $ticketSubject->tickets()->count() }}</span></a></td>
+                        <td><a class="text-primary" href="{{ route('ticketSubject', $ticketSubject->id) }}">{{ $ticketSubject->subject }}
+                                <span class="badge badge-secondary">{{ $ticketSubject->tickets()->count() }}</span>
+                                @if($ticketSubject->tickets()->where('message_status', 'unseen')->whereNotNull('admin_id')->count() > 0)<span class="badge badge-danger">new  {{ $ticketSubject->tickets()->where('message_status', 'unseen')->count() }} </span>@endif
+                            </a></td>
                         <td class="@if($ticketSubject->status == 'open') text-danger @else text-success @endif">{{ $ticketSubject->status }}
                             <form action="{{ route('changeTicketStatus', $ticketSubject->id) }}" method="post">
                                 {{ method_field('put') }}

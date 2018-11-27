@@ -41,6 +41,13 @@ class TicketController extends Controller
      */
     public function store($subject_id, Request $request)
     {
+        //change unseen tickets to replied
+        $seenTickets = Ticket::where('subject_id', $subject_id)->whereNotNull('user_id')->get();
+        foreach ($seenTickets as $seenTicket) {
+            $seenTicket->message_status = 'replied';
+            $seenTicket->save();
+        }
+
         $ticket = new Ticket;
         $ticket->message = $request->message;
         $ticket->subject_id = $subject_id;
@@ -100,15 +107,15 @@ class TicketController extends Controller
      */
     public function ticketSubject($subject_id)
     {
-
+        //change unseen tickets to seen
+        $seenTickets = Ticket::where('subject_id', $subject_id)->where('message_status', 'unseen')->whereNotNull('user_id')->get();
+        foreach ($seenTickets as $seenTicket) {
+            $seenTicket->message_status = 'seen';
+            $seenTicket->save();
+        }
         $tickets = TicketSubject::find($subject_id)->tickets()->get();
         $ticketSubject = TicketSubject::find($subject_id);
-//        $closeTicketSubjects = TicketSubject::find($subject_id)->tickets()->whereDate('created_at', '<', Carbon::today()->subDays( 2 ));
-//        return dd($closeTicketSubjects);
-//        foreach ($closeTicketSubjects as $closeTicketSubject) {
-//            $closeTicketSubject->satatus = 'close';
-//            $closeTicketSubject->save();
-//        }
+
         return view('admin.ticket.send-ticket', compact('tickets', 'ticketSubject'));
     }
 

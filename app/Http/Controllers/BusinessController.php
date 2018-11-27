@@ -206,6 +206,13 @@ class BusinessController extends Controller
 
     public function ticketSubject($subjectID)
     {
+        //change unseen tickets to seen
+        $seenTickets = Ticket::where('subject_id', $subjectID)->where('message_status', 'unseen')->whereNotNull('admin_id')->get();
+        foreach ($seenTickets as $seenTicket) {
+            $seenTicket->message_status = 'seen';
+            $seenTicket->save();
+        }
+
         $ticketSubjectStatus = TicketSubject::find($subjectID);
         $tickets = TicketSubject::where('user_id', Auth::user()->id)->find($subjectID)->tickets()->get();
         return view('business.sendticket', compact('tickets', 'ticketSubjectStatus'));
@@ -213,6 +220,13 @@ class BusinessController extends Controller
 
     public function storeTicket($subjectID, Request $request)
     {
+        //change unseen tickets to replied
+        $seenTickets = Ticket::where('subject_id', $subjectID)->whereNotNull('admin_id')->get();
+        foreach ($seenTickets as $seenTicket) {
+            $seenTicket->message_status = 'replied';
+            $seenTicket->save();
+        }
+
         $ticket = new Ticket;
         $ticket->message = $request->message;
         $ticket->subject_id = $subjectID;
