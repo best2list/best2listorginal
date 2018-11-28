@@ -113,6 +113,7 @@ class TicketController extends Controller
             $seenTicket->message_status = 'seen';
             $seenTicket->save();
         }
+
         $tickets = TicketSubject::find($subject_id)->tickets()->get();
         $ticketSubject = TicketSubject::find($subject_id);
 

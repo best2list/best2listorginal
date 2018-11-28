@@ -231,6 +231,16 @@ class BusinessController extends Controller
         $ticket->message = $request->message;
         $ticket->subject_id = $subjectID;
         $ticket->user_id = Auth::user()->id;
+        if($request->file('file_1')) {
+            $image = $request->file('file_1');
+            $newPath = 'images/tickets/'.date('Y')."/".date('m')."/".date('d')."/";
+            $newName = date('Y_m_d_H_i_s').'_'.$subjectID.'.'.$image->getClientOriginalExtension();
+            $image->move($newPath, $newName);
+            $business_image = new BusinessImage;
+            $business_image->business_id = $subjectID;
+            $business_image->image_path = '/'.$newPath . $newName;
+            $business_image->save();
+        }
         $ticket->save();
         return back();
     }

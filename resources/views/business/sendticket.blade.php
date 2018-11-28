@@ -9,13 +9,15 @@
         <div class="card-header">ticket</div>
         <div class="card-body">
                 @foreach($tickets as $ticket)
-                    @if($ticket->user_id)
-                        <div class="bg-primary text-white p-1 mb-1 rounded">{{ Auth::user()->username }} <span>{{ $ticket->message_status }}</span></div>
-                    @else
-                        <div class="bg-success text-white p-1 mb-1 rounded">{{ $ticket->hasUsername($ticket->admin_id) }} <span>{{ $ticket->message_status }}</span></div>
-                    @endif
-                        <div>{{ $ticket->message }}</div>
-                        <span class="@if($ticket->message_status == 'unseen') text-danger @elseif($ticket->message_status == 'seen') text-primary @else text-success @endif">{{ $ticket->status }}</span>
+                     <div class="p-0 alert @if($ticket->user_id) alert-primary @else alert-success @endif">
+                        @if($ticket->user_id)
+                            <div class="bg-primary text-white p-1 pl-3 mb-1 rounded-top">{{ Auth::user()->username }} <span>{{ $ticket->message_status }}</span></div>
+                        @else
+                            <div class="bg-success text-white p-1 pl-3 mb-1 rounded-top">{{ $ticket->hasUsername($ticket->admin_id) }} <span>{{ $ticket->message_status }}</span></div>
+                        @endif
+                            <div class="p-3 pl-4">{{ $ticket->message }}</div>
+                            <span class="@if($ticket->message_status == 'unseen') text-danger @elseif($ticket->message_status == 'seen') text-primary @else text-success @endif">{{ $ticket->status }}</span>
+                     </div>
                 @endforeach
         </div>
 {{--        {{ dd($ticketSubjectStatus) }}--}}
@@ -28,7 +30,7 @@
         </div>
         @if($ticketSubjectStatus->status == 'open')
             <div class="card-body">
-                <form method="POST" action="{{ route('storeTicket', $ticketSubjectStatus->id) }}" aria-label="{{ __('storeTicket') }}">
+                <form method="POST" action="{{ route('storeTicket', $ticketSubjectStatus->id) }}" aria-label="{{ __('storeTicket') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
                         <label for="message" class="col-sm-4 col-form-label text-md-right">{{ __('message') }}</label>
@@ -40,6 +42,48 @@
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('message') }}</strong>
                                 </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="file_1" class="col-sm-4 col-form-label text-md-right">{{ __('file_1') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="file_1" type="file" class="form-control{{ $errors->has('file_1') ? ' is-invalid' : '' }}" name="file_1" value="{{ old('file_1') }}"  autofocus>
+
+                            @if ($errors->has('file_1'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('file_1') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="file_2" class="col-sm-4 col-form-label text-md-right">{{ __('file_2') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="file_2" type="file" class="form-control{{ $errors->has('file_2') ? ' is-invalid' : '' }}" name="file_2" value="{{ old('file_2') }}"  autofocus>
+
+                            @if ($errors->has('file_2'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('file_2') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="file_3" class="col-sm-4 col-form-label text-md-right">{{ __('file_3') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="file_3" type="file" class="form-control{{ $errors->has('file_3') ? ' is-invalid' : '' }}" name="file_3" value="{{ old('file_3') }}"  autofocus>
+
+                            @if ($errors->has('file_3'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('file_3') }}</strong>
+                                    </span>
                             @endif
                         </div>
                     </div>

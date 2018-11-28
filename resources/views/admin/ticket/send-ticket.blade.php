@@ -5,13 +5,15 @@
         <div class="card-header">ticket</div>
         <div class="card-body">
             @foreach($tickets as $ticket)
-                @if($ticket->user_id)
-                    <div class="p-1 rounded bg-primary text-white">{{ $ticket->hasUsername($ticket->user_id) }} <span>{{ $ticket->message_status }}</span></div>
-                @else
-                    <div class="p-1 rounded bg-success text-white">{{ $ticket->hasUsername($ticket->admin_id) }} <span>{{ $ticket->message_status }}</span></div>
-                @endif
-                <div>{{ $ticket->message }}</div>
-                <span class="@if($ticket->message_status == 'unseen') text-danger @elseif($ticket->message_status == 'seen') text-primary @else text-success @endif">{{ $ticket->status }}</span>
+                <div class="p-0 alert @if($ticket->user_id) alert-primary @else alert-success @endif">
+                    @if($ticket->user_id)
+                        <div class="bg-primary text-white p-1 pl-3 mb-1 rounded-top">{{ $ticket->hasUsername($ticket->user_id) }} <span>{{ $ticket->message_status }}</span></div>
+                    @else
+                        <div class="bg-success text-white p-1 pl-3 mb-1 rounded-top">{{ $ticket->hasUsername($ticket->admin_id) }} <span>{{ $ticket->message_status }}</span></div>
+                    @endif
+                    <div class="p-3 pl-4">{{ $ticket->message }}</div>
+                    <span class="@if($ticket->message_status == 'unseen') text-danger @elseif($ticket->message_status == 'seen') text-primary @else text-success @endif">{{ $ticket->status }}</span>
+                </div>
             @endforeach
         </div>
         <div class="card-body">
