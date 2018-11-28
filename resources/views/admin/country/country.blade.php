@@ -1,4 +1,4 @@
-@extends('admin.dashboard')
+@extends('admin.layouts.app')
 @section('content')
 
                     <div class="card">
@@ -46,8 +46,8 @@
                         </div>
                     </div>
     <br/>
-                    <div class="card-body">
-                        <table class="table table-bordered">
+
+                        <table class="table table-bordered table-responsive-md">
                             <tr class="table-active">
                                 <td>country ID</td>
                                 <td>country name</td>
@@ -60,7 +60,7 @@
                                     <td>{{ $country->id }}</td>
                                     <td>{{ $country->country }}</td>
                                     <td><img class="col-md-3" src="/{{ $country->flag }}" alt="{{$country->country}}"></td>
-                                    <td><a href="{{ route("edit_country",$country->id) }}">edit</a> </td>
+                                    <td><a class="btn btn-warning" href="{{ route("edit_country",$country->id) }}">edit</a> </td>
                                     <td><form action="{{ route('countryDestroy', $country->id) }}" method="post">
                                             {{ method_field('delete') }}
                                             @csrf
@@ -70,7 +70,7 @@
                                 </tr>
                             @endforeach
                         </table>
-                    </div>
+
 
                     <br/>
 

@@ -1,9 +1,9 @@
-@extends('admin.dashboard')
+@extends('admin.layouts.app')
 @section('content')
                     <div class="card">
                         <div class="card-header">comments</div>
                         <div class="card-body">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered table-responsive-md">
                                 <tr class="table-active">
                                     <td>comment ID</td>
                                     <td>business ID</td>
