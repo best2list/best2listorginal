@@ -5,7 +5,7 @@
         <div class="card-header">create FAQ</div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route('update_faq', $faq->id) }}" aria-label="{{ __('edit_faq') }}">
+            <form method="POST" action="{{ route('updateFAQ', $faq->id) }}" aria-label="{{ __('updateFAQ') }}">
                 @csrf
                 {{ method_field('put') }}
 

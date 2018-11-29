@@ -62,7 +62,7 @@
                                     <td>{{ $category->title }}</td>
                                     <td>{{ $category->parent_id }}</td>
                                     <td>
-                                        <a class="btn-sm btn-warning text-center" href="{{ route("edit_category",$category->id) }}"><i class="fas fa-edit"></i></a>
+                                        <a class="btn-sm btn-warning text-center" href="{{ route("editCategory",$category->id) }}"><i class="fas fa-edit"></i></a>
                                         <form class="d-inline" action="{{ route('categoryDestroy', $category->id) }}" method="post">
                                             {{ method_field('delete') }}
                                             @csrf

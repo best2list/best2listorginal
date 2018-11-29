@@ -5,7 +5,7 @@
         <div class="card-header">upload images</div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route('storeSlide') }}" aria-label="{{ __('uploadimage') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('storeSlide') }}" aria-label="{{ __('storeSlide') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group row">
                     <label for="slideImage" class="col-sm-4 col-form-label text-md-right">{{ __('slide show Image *') }}</label>

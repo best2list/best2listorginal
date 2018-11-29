@@ -5,7 +5,7 @@
                     <div class="card-header">create business</div>
 
                     <div class="card-body">
-                      <form method="POST" action="{{ route('update_country', $country->id) }}" aria-label="{{ __('update_country') }}" enctype="multipart/form-data">
+                      <form method="POST" action="{{ route('updateCountry', $country->id) }}" aria-label="{{ __('update_country') }}" enctype="multipart/form-data">
 
                           @csrf
                           {{ method_field('put') }}

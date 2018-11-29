@@ -16,7 +16,12 @@
                             <div class="bg-success text-white p-1 pl-3 mb-1 rounded-top">{{ $ticket->hasUsername($ticket->admin_id) }} <span>{{ $ticket->message_status }}</span></div>
                         @endif
                             <div class="p-3 pl-4">{{ $ticket->message }}</div>
-                            <span class="@if($ticket->message_status == 'unseen') text-danger @elseif($ticket->message_status == 'seen') text-primary @else text-success @endif">{{ $ticket->status }}</span>
+                            {{--<span class="@if($ticket->message_status == 'unseen') text-danger @elseif($ticket->message_status == 'seen') text-primary @else text-success @endif">{{ $ticket->status }}</span>--}}
+                            <div class="p-3 pl-4">
+                                @foreach(App\Ticket::find($ticket->id)->ticketFiles()->get() as $ticketFile)
+                                    <a href="{{ url($ticketFile->file_path) }}">{{ $ticketFile->id }}-download</a><br>
+                                @endforeach
+                            </div>
                      </div>
                 @endforeach
         </div>
@@ -30,6 +35,35 @@
         </div>
         @if($ticketSubjectStatus->status == 'open')
             <div class="card-body">
+                <form method="POST" action="{{ route('storeTicketFile', $ticketSubjectStatus->id) }}" aria-label="{{ __('storeTicketFile') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group row">
+                        <label for="file" class="col-sm-4 col-form-label text-md-right">{{ __('file') }}</label>
+
+                        <div class="col-md-6">
+                            <input id="file" type="file" class="form-control{{ $errors->has('file') ? ' is-invalid' : '' }}" name="file" value="{{ old('file') }}"  autofocus>
+
+                            @if ($errors->has('file'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('file') }}</strong>
+                                    </span>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-0">
+                        <div class="col-md-8 offset-md-4">
+                            <button type="submit" class="btn btn-primary">
+                                {{ __('insert') }}
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        @endif
+
+    @if($ticketSubjectStatus->status == 'open')
+            <div class="card-body">
                 <form method="POST" action="{{ route('storeTicket', $ticketSubjectStatus->id) }}" aria-label="{{ __('storeTicket') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
@@ -42,48 +76,6 @@
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $errors->first('message') }}</strong>
                                 </span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="file_1" class="col-sm-4 col-form-label text-md-right">{{ __('file_1') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="file_1" type="file" class="form-control{{ $errors->has('file_1') ? ' is-invalid' : '' }}" name="file_1" value="{{ old('file_1') }}"  autofocus>
-
-                            @if ($errors->has('file_1'))
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('file_1') }}</strong>
-                                    </span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="file_2" class="col-sm-4 col-form-label text-md-right">{{ __('file_2') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="file_2" type="file" class="form-control{{ $errors->has('file_2') ? ' is-invalid' : '' }}" name="file_2" value="{{ old('file_2') }}"  autofocus>
-
-                            @if ($errors->has('file_2'))
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('file_2') }}</strong>
-                                    </span>
-                            @endif
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="file_3" class="col-sm-4 col-form-label text-md-right">{{ __('file_3') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="file_3" type="file" class="form-control{{ $errors->has('file_3') ? ' is-invalid' : '' }}" name="file_3" value="{{ old('file_3') }}"  autofocus>
-
-                            @if ($errors->has('file_3'))
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('file_3') }}</strong>
-                                    </span>
                             @endif
                         </div>
                     </div>

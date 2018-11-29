@@ -99,7 +99,7 @@ class CountryController extends Controller
             $country->flag = $newpath . $newName;
         }
         $country->save();
-        return redirect()->route('admin');
+        return redirect()->route('country');
 
     }
 

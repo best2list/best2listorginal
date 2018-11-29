@@ -90,7 +90,7 @@
                                         <li><a href="/admin/country">Countries</a> </li>
                                         <li><a href="/admin/comment">Comments</a> </li>
                                         <li><a href="{{ route('slideshow') }}">Slideshow</a> </li>
-                                        <li><a href="{{ route('socialnetwork') }}">Social Network</a> </li>
+                                        <li><a href="{{ route('socialNetwork') }}">Social Network</a> </li>
                                         <li><a href="{{ route("FAQ") }}">FAQ</a> </li>
                                         <li><a href="{{ route("tickets") }}">Tickets</a> </li>
                                         <li><a href="{{ route("menu") }}">menu</a> </li>

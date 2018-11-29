@@ -60,7 +60,7 @@
                                     <td>{{ $country->id }}</td>
                                     <td>{{ $country->country }}</td>
                                     <td><img class="col-md-3" src="/{{ $country->flag }}" alt="{{$country->country}}"></td>
-                                    <td><a class="btn btn-warning" href="{{ route("edit_country",$country->id) }}">edit</a> </td>
+                                    <td><a class="btn btn-warning" href="{{ route("editCountry",$country->id) }}">edit</a> </td>
                                     <td><form action="{{ route('countryDestroy', $country->id) }}" method="post">
                                             {{ method_field('delete') }}
                                             @csrf

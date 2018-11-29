@@ -8,6 +8,7 @@ use App\Category;
 use App\Country;
 use App\Ticket;
 use App\TicketCategory;
+use App\TicketFiles;
 use App\TicketSubject;
 use App\User;
 use App\Favorites;
@@ -157,6 +158,7 @@ class BusinessController extends Controller
 
     public function showFavorite()
     {
+       // return "hello";
 //        $businesses = User::find(Auth::user()->id)->favorites()->business->get();
         //$businesses = User::find(Auth::user()->id)->favorites()->business()->get();
         //$businesses = Favorites::find(1)->business->get();
@@ -231,16 +233,16 @@ class BusinessController extends Controller
         $ticket->message = $request->message;
         $ticket->subject_id = $subjectID;
         $ticket->user_id = Auth::user()->id;
-        if($request->file('file_1')) {
-            $image = $request->file('file_1');
-            $newPath = 'images/tickets/'.date('Y')."/".date('m')."/".date('d')."/";
-            $newName = date('Y_m_d_H_i_s').'_'.$subjectID.'.'.$image->getClientOriginalExtension();
-            $image->move($newPath, $newName);
-            $business_image = new BusinessImage;
-            $business_image->business_id = $subjectID;
-            $business_image->image_path = '/'.$newPath . $newName;
-            $business_image->save();
-        }
+//        if($request->file('file_1')) {
+//            $image = $request->file('file_1');
+//            $newPath = 'images/tickets/'.date('Y')."/".date('m')."/".date('d')."/";
+//            $newName = date('Y_m_d_H_i_s').'_'.$subjectID.'.'.$image->getClientOriginalExtension();
+//            $image->move($newPath, $newName);
+//            $business_image = new BusinessImage;
+//            $business_image->business_id = $subjectID;
+//            $business_image->image_path = '/'.$newPath . $newName;
+//            $business_image->save();
+//        }
         $ticket->save();
         return back();
     }
@@ -253,6 +255,22 @@ class BusinessController extends Controller
         else
             $ticketSubject->status = 'open';
         $ticketSubject->save();
+        return back();
+    }
+
+    public function storeTicketFile($subject_id, Request $request)
+    {
+        $userLasteTicketID = Ticket::where('subject_id', $subject_id)->whereNotNull('user_id')->latest()->value('id');
+        $ticketFile = new TicketFiles;
+        $ticketFile->ticket_id = $userLasteTicketID;
+        if($request->file('file')) {
+            $file = $request->file('file');
+            $newPath = 'images/tickets/'.date('Y')."/".date('m')."/".date('d')."/";
+            $newName = date('Y_m_d_H_i_s').'_'.$userLasteTicketID.'.'.$file->getClientOriginalExtension();
+            $file->move($newPath, $newName);
+            $ticketFile->file_path = '/'.$newPath . $newName;
+        }
+        $ticketFile->save();
         return back();
     }
 }

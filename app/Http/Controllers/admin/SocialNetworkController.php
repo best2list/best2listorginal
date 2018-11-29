@@ -83,7 +83,7 @@ class SocialNetworkController extends Controller
       $socialNetwork->color = $request->color;
       $socialNetwork->address = $request->address;
       $socialNetwork->save();
-      return redirect()->route('admin');
+      return redirect()->route('slideshow');
     }
 
     /**

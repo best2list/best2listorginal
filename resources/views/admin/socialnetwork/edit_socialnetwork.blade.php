@@ -5,7 +5,7 @@
         <div class="card-header">upload images</div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route("update_socialnetwork",$socialnetwork->id) }}" aria-label="{{ __('social_network') }}">
+            <form method="POST" action="{{ route("updateSocialNetwork",$socialnetwork->id) }}" aria-label="{{ __('updateSocialNetwork') }}">
                 @csrf
                 {{ method_field('put') }}
 

@@ -5,7 +5,7 @@
         <div class="card-header">create category</div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route('updatemenu', $menu->id) }}" aria-label="{{ __('updatemenu') }}">
+            <form method="POST" action="{{ route('updateMenu', $menu->id) }}" aria-label="{{ __('updateMenu') }}">
                 {{ method_field('put') }}
                 @csrf
                 <div class="form-group row">

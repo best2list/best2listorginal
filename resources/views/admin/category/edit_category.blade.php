@@ -4,7 +4,7 @@
                 <div class="card">
                     <div class="card-header">create business</div>
                     <div class="card-body">
-                      <form method="POST" action="{{ route('update_category', $category->id) }}" aria-label="{{ __('update_category') }}">
+                      <form method="POST" action="{{ route('updateCategory', $category->id) }}" aria-label="{{ __('update_category') }}">
                           @csrf
                           {{ method_field('put') }}
                             <div class="form-group row">

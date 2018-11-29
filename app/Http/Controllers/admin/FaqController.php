@@ -79,7 +79,7 @@ class FaqController extends Controller
       $faq->question = $request->question;
       $faq->answer = $request->answer;
       $faq->save();
-      return redirect()->route('admin');
+      return redirect()->route('FAQ');
 
     }
 

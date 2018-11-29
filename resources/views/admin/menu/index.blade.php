@@ -5,7 +5,7 @@
         <div class="card-header">create menu</div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route('storemenu') }}" aria-label="{{ __('storemenu') }}">
+            <form method="POST" action="{{ route('storeMenu') }}" aria-label="{{ __('storeMenu') }}">
                 @csrf
                 <div class="form-group row">
                     <label for="title" class="col-sm-4 col-form-label text-md-right">{{ __('title') }}</label>
@@ -61,7 +61,7 @@
                             @foreach($menus as $menu)
                                 <tr class="@if($menu->status=='passive') alert alert-danger @else alert alert-success @endif">
                                     <td>{{ $menu->id }}</td>
-                                    <td><a href="{{ route('showmenu', $menu->id) }}">{{ $menu->title }}</a></td>
+                                    <td><a href="{{ route('showMenu', $menu->id) }}">{{ $menu->title }}</a></td>
                                     <td>{{ str_limit($menu->text, 300) }}</td>
                                     <td>
                                         <span>{{ $menu->status }}</span>
@@ -70,8 +70,8 @@
                                             @csrf
                                             <input type="submit" value="change status" class="btn btn-primary">
                                         </form></td>
-                                    <td><a href="{{ route('editmenu', $menu->id) }}">edit</a></td>
-                                    <td><form action="{{ route('destroymenu', $menu->id) }}" method="post">
+                                    <td><a href="{{ route('editMenu', $menu->id) }}">edit</a></td>
+                                    <td><form action="{{ route('destroyMenu', $menu->id) }}" method="post">
                                             {{ method_field('delete') }}
                                             @csrf
                                             <input type="submit" value="delete" class="btn btn-danger">

@@ -32,73 +32,113 @@
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/FAQ', 'HomeController@faq')->name('faq');
 Route::get('/category/{id}', 'HomeController@getCategory')->name('getCategory');
 Route::get('/country/{id}', 'HomeController@getCountry')->name('getCountry');
 Route::get('/menu/{id}', 'HomeController@showMenu')->name('showMenu');
 Route::get('/show/{id}', 'HomeController@showBusiness')->name('showBusiness');
-Route::post('/show/{id}/addcomment', 'HomeController@addComment')->name('addComment');
+Route::post('/show/add-comment/{id}', 'HomeController@addComment')->name('addComment');
 
 
 Route::group(['prefix'=>'mybusiness'],function(){
+
+// favorite URLs
+    Route::get('/favorite','BusinessController@showFavorite')->name('showFavorite');
+    Route::put('/favorite/add/{business_id}','BusinessController@addToFavorite')->name('addToFavorite');
+
+
+// ticket URLs
+    Route::get('/ticket','BusinessController@ticket')->name('ticket');
+    Route::post('/ticket/store-subject','BusinessController@storeTicketSubject')->name('storeTicketSubject');
+    Route::get('/ticket/subject/{subject_id}','BusinessController@ticketSubject')->name('ticketSubject');
+    Route::post('/ticket/store-ticket/{subject_id}','BusinessController@storeTicket')->name('storeTicket');
+    Route::post('/ticket/file-upload/{subject_id}/','BusinessController@storeTicketFile')->name('storeTicketFile');
+    Route::put('/ticket/change-status/{subject_id}','BusinessController@changeTicketStatus')->name('changeTicketStatus');
+
+
+// business URLs
     Route::get('/','BusinessController@index')->name('index');
     Route::post('/','BusinessController@store')->name('store');
     Route::get('/create','BusinessController@create')->name('create');
-    Route::get('/favorites','BusinessController@showFavorite')->name('showFavorite');
-    Route::get('/ticket','BusinessController@ticket')->name('ticket');
-    Route::post('/storeticketsubject','BusinessController@storeTicketSubject')->name('storeTicketSubject');
-    Route::get('/{subject_id}/ticketsubject','BusinessController@ticketSubject')->name('ticketSubject');
-    Route::post('/{subject_id}/storeticket','BusinessController@storeTicket')->name('storeTicket');
     Route::get('/{business_id}','BusinessController@show')->name('show');
+    Route::get('/edit/{business_id}','BusinessController@edit')->name('edit');
     Route::put('/{business_id}','BusinessController@update')->name('update');
-    Route::put('/{subject_id}/changeTicketStatus','BusinessController@changeTicketStatus')->name('changeTicketStatus');
     Route::delete('/{business_id}','BusinessController@destroy')->name('destroy');
-    Route::get('/{business_id}/edit','BusinessController@edit')->name('edit');
-    Route::post('/{business_id}/imageupload','BusinessController@businessImageUpload')->name('businessImageUpload');
-    Route::put('/{business_id}/addtofavorites','BusinessController@addToFavorite')->name('addToFavorite');
-    Route::put('/{business_id}/status','BusinessController@businessStatus')->name('businessStatus');
-    Route::delete('/{business_image_id}/delete','BusinessController@businessImageDestroy')->name('businessImageDestroy');
+    Route::post('/image-upload/{business_id}','BusinessController@businessImageUpload')->name('businessImageUpload');
+    Route::put('/change-status/{business_id}','BusinessController@businessStatus')->name('businessStatus');
+    Route::delete('/image-delete/{business_image_id}','BusinessController@businessImageDestroy')->name('businessImageDestroy');
 
 });
+
+
+
 Route::group(['prefix'=>'admin'],function(){
+
+// admin dashboard URLs
     Route::get('/','AdminController@index')->name('admin');
+
+
+// admin country URLs
     Route::get('/country', 'admin\CountryController@index')->name('country');
-    Route::get('/{id}/edit_country', 'admin\CountryController@edit')->name('edit_country');
+    Route::get('/country/edit/{id}', 'admin\CountryController@edit')->name('editCountry');
+    Route::post('/country/store','admin\CountryController@store')->name('storeCountry');
+    Route::put('/country/update/{id}','admin\CountryController@update')->name('updateCountry');
+    Route::delete('/country/delete/{country_id}', 'admin\CountryController@destroy')->name('countryDestroy');
+
+
+// admin category URLs
     Route::get('/category', 'admin\CategoryController@index')->name('category');
-    Route::get('/{id}/edit_category', 'admin\CategoryController@edit')->name('edit_category');
-    Route::put('/{id}/countryUpdate','admin\CountryController@update')->name('update_country');
-    Route::put('/{id}','admin\CategoryController@update')->name('update_category');
+    Route::get('/category/edit/{id}', 'admin\CategoryController@edit')->name('editCategory');
+    Route::post('/category/store','admin\CategoryController@store')->name('storeCategory');
+    Route::put('/category/update/{id}','admin\CategoryController@update')->name('updateCategory');
+    Route::delete('/category/delete/{category_id}', 'admin\CategoryController@destroy')->name('categoryDestroy');
+
+
+// admin FAQ URLs
     Route::get('/FAQ', 'admin\FaqController@index')->name('FAQ');
-    Route::get('/{id}/edit_faq', 'admin\FaqController@edit')->name('edit_faq');
-    Route::put('/{id}/faqUpdate','admin\FaqController@update')->name('update_faq');
+    Route::get('/FAQ/edit/{id}', 'admin\FaqController@edit')->name('editFAQ');
+    Route::post('/FAQ/store','admin\FaqController@store')->name('storeFAQ');
+    Route::put('/FAQ/update/{id}','admin\FaqController@update')->name('updateFAQ');
+    Route::delete('/FAQ/delete/{id}','admin\FaqController@destroy')->name('destroyFAQ');
+
+
+// admin menu URLs
     Route::get('/menu', 'admin\MenuController@index')->name('menu');
-    Route::post('/menu', 'admin\MenuController@store')->name('storemenu');
-    Route::get('{id}/showmenu', 'admin\MenuController@show')->name('showmenu');
-    Route::get('{id}/editmenu', 'admin\MenuController@edit')->name('editmenu');
-    Route::post('/storefaq','admin\FaqController@store')->name('storeFAQ');
+    Route::post('/menu', 'admin\MenuController@store')->name('storeMenu');
+    Route::get('/menu/show/{id}', 'admin\MenuController@show')->name('showMenu');
+    Route::get('/menu/edit/{id}', 'admin\MenuController@edit')->name('editMenu');
+    Route::put('/menu/update/{id}', 'admin\MenuController@update')->name('updateMenu');
+    Route::put('/menu/change-status/{id}', 'admin\MenuController@changeStatus')->name('changeStatus');
+    Route::delete('/menu/delete/{id}', 'admin\MenuController@destroy')->name('destroyMenu');
+
+
+// admin comment URLs
     Route::get('/comment','admin\CommentController@index')->name('comment');
+    Route::put('/comment/change-status/{comment_id}','admin\CommentController@commentStatus')->name('commentStatus');
+    Route::delete('/comment/delete/{comment_id}','admin\CommentController@destroy')->name('commentDestroy');
+
+
+// admin slideshow URLs
     Route::get('/slideshow','admin\SlideshowController@index')->name('slideshow');
-    Route::post('/storeslide','admin\SlideshowController@store')->name('storeSlide');
-    Route::post('/storesocialnetwork','admin\SocialNetworkController@store')->name('storeSocialNetwork');
-    Route::put('/{id}/updatemenu', 'admin\MenuController@update')->name('updatemenu');
-    Route::put('/{id}/changestatus', 'admin\MenuController@changeStatus')->name('changeStatus');
-    Route::delete('/{id}/deletemenu', 'admin\MenuController@destroy')->name('destroymenu');
-    Route::delete('/deleteslide/{id}','admin\SlideshowController@destroy')->name('destroySlide');
-    Route::delete('/deletesocialnetwork/{id}','admin\SocialNetworkController@destroy')->name('deleteSocialNetwork');
-    Route::delete('/FAQ/{id}','admin\FaqController@destroy')->name('destroyFAQ');
-    Route::get('/socialnetwork','admin\SocialNetworkController@index')->name('socialnetwork');
-    Route::get('/{id}/edit_socialnetwork', 'admin\SocialNetworkController@edit')->name('edit_socialnetwork');
-    Route::put('/{id}/socialnetworkUpdate','admin\SocialNetworkController@update')->name('update_socialnetwork');
-    Route::get('/tickets','admin\TicketController@index')->name('tickets');
-    Route::get('/{subject_id}/ticketsubject','admin\TicketController@ticketSubject')->name('adminTicketSubject');
-    Route::post('/{subject_id}/storeticket','admin\TicketController@store')->name('adminStoreTicket');
-    Route::put('/{subject_id}/changeTicketStatus','admin\TicketController@changeTicketStatus')->name('changeTicketStatus');
-    Route::post('/category/storecategory','admin\CategoryController@store')->name('storeCategory');
-    Route::post('/country/storecountry','admin\CountryController@store')->name('storeCountry');
-    Route::delete('/category/{category_id}/delete', 'admin\CategoryController@destroy')->name('categoryDestroy');
-    Route::delete('/country/{country_id}/delete', 'admin\CountryController@destroy')->name('countryDestroy');
-    Route::put('/comment/{comment_id}/status','admin\CommentController@commentStatus')->name('commentStatus');
-    Route::delete('/comment/{comment_id}/delete','admin\CommentController@destroy')->name('commentDestroy');
+    Route::post('/slideshow/store','admin\SlideshowController@store')->name('storeSlide');
+    Route::delete('/slideshow/delete/{id}','admin\SlideshowController@destroy')->name('destroySlide');
+
+
+// admin social-network URLs
+    Route::get('/social-network','admin\SocialNetworkController@index')->name('socialNetwork');
+    Route::get('/social-network/edit/{id}', 'admin\SocialNetworkController@edit')->name('editSocialNetwork');
+    Route::post('/social-network/store','admin\SocialNetworkController@store')->name('storeSocialNetwork');
+    Route::put('/social-network/update/{id}','admin\SocialNetworkController@update')->name('updateSocialNetwork');
+    Route::delete('/social-network/delete/{id}','admin\SocialNetworkController@destroy')->name('deleteSocialNetwork');
+
+
+// admin ticket URLs
+    Route::get('/ticket','admin\TicketController@index')->name('tickets');
+    Route::get('/ticket/subject/{subject_id}','admin\TicketController@ticketSubject')->name('adminTicketSubject');
+    Route::post('/ticket/store/{subject_id}','admin\TicketController@store')->name('adminStoreTicket');
+    Route::put('/ticket/change-status/{subject_id}','admin\TicketController@changeTicketStatus')->name('changeTicketStatus');
+
 });

@@ -75,7 +75,7 @@
                         {!! $socialNetwork->icon !!}
                     </a></td>
                 <td>{{ $socialNetwork->address }}</td>
-                <td><a href="{{ route('edit_socialnetwork', $socialNetwork->id) }}">edit</a></td>
+                <td><a href="{{ route('editSocialNetwork', $socialNetwork->id) }}">edit</a></td>
                 <td> <form method="post" action="{{ route("deleteSocialNetwork",$socialNetwork->id) }}" aria-label="{{ __('deleteSocialNetwork') }}">
                         {{method_field('delete')}}
                         @csrf

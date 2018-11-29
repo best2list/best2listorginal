@@ -83,7 +83,7 @@ class CategoryController extends Controller
         $category->title = $request->title;
         $category->parent_id = $request->parent_id;
         $category->save();
-        return redirect()->route('admin');
+        return redirect()->route('category');
     }
 
     /**

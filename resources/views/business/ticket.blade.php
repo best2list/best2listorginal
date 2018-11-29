@@ -100,7 +100,7 @@
                         <td >{{ $ticketSubject->tickets()->latest()->value('created_at') }}</td>
                         <td >{{ $ticketSubject->tickets()->latest()->value('created_at')->diffForHumans() }}</td>
                     </tr>
-                    @endforeach
+                @endforeach
             </table>
         </div>
     </div>

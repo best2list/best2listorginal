@@ -13,6 +13,11 @@
                     @endif
                     <div class="p-3 pl-4">{{ $ticket->message }}</div>
                     <span class="@if($ticket->message_status == 'unseen') text-danger @elseif($ticket->message_status == 'seen') text-primary @else text-success @endif">{{ $ticket->status }}</span>
+                    <div class="p-3 pl-4">
+                        @foreach(App\Ticket::find($ticket->id)->ticketFiles()->get() as $ticketFile)
+                            <a href="{{ url($ticketFile->file_path) }}">{{ $ticketFile->id }}-download</a><br>
+                        @endforeach
+                    </div>
                 </div>
             @endforeach
         </div>
