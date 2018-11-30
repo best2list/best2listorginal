@@ -83,8 +83,9 @@ Route::group(['prefix'=>'admin'],function(){
 
 // admin country URLs
     Route::get('/form', 'admin\FormController@index')->name('form');
+    Route::post('/form', 'admin\FormController@store')->name('storeForm');
     Route::get('/form/{id}', 'admin\FormController@createFormItem')->name('createFormItem');
-    Route::post('/form/store/{id}','admin\FormController@storeFormItem')->name('createFormItem');
+    Route::post('/form/store/{id}','admin\FormController@storeFormItem')->name('storeFormItem');
     //Route::put('/country/update/{id}','admin\CountryController@update')->name('updateCountry');
     //Route::delete('/country/delete/{country_id}', 'admin\CountryController@destroy')->name('countryDestroy');
 

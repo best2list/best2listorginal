@@ -8,4 +8,5 @@
             <li><a class="btn btn-block btn-dark rounded-0" href="{{ route("FAQ") }}">FAQ</a> </li>
             <li><a class="btn btn-block btn-dark rounded-0" href="{{ route("tickets") }}">Tickets</a> </li>
             <li><a class="btn btn-block btn-dark rounded-0" href="{{ route("menu") }}">menu</a> </li>
+            <li><a class="btn btn-block btn-dark rounded-0" href="{{ route("form") }}">form</a> </li>
     </ul>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Form;
+use foo\bar;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +16,8 @@ class FormController extends Controller
      */
     public function index()
     {
-        return view('admin.form.index');
+        $forms = Form::all();
+        return view('admin.form.index', compact('forms'));
     }
 
     /**
@@ -35,7 +38,11 @@ class FormController extends Controller
      */
     public function store(Request $request)
     {
-
+        $form = new Form;
+        $form->name = $request->name;
+        $form->description = $request->description;
+        $form->save();
+        return back();
     }
 
     /**
@@ -86,7 +93,8 @@ class FormController extends Controller
     //add form-Items to the selected form
     public function createFormItem($id)
     {
-        return view('admin.form.form-item');
+        $form = Form::find($id);
+        return view('admin.form.form-item', compact('form'));
     }
 
     //store form-Items in the database
