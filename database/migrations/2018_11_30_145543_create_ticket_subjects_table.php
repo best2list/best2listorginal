@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TicketSubjects extends Migration
+class CreateTicketSubjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,6 +14,7 @@ class TicketSubjects extends Migration
     public function up()
     {
         Schema::create('ticket_subjects', function (Blueprint $table) {
+
             $table->increments('id');
             $table->string('subject', 300);
             $table->string('description',1000)->nullable();
@@ -23,9 +24,9 @@ class TicketSubjects extends Migration
             $table->timestamps();
             $table->foreign('ticket_cat_id')->references('id')->on('ticket_categories')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+
         });
     }
-
 
     /**
      * Reverse the migrations.

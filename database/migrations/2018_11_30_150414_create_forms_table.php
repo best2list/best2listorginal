@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TicketCategories extends Migration
+class CreateFormsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class TicketCategories extends Migration
      */
     public function up()
     {
-        Schema::create('ticket_categories', function (Blueprint $table) {
+        Schema::create('forms', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',100);
+            $table->string('name',200);
+            $table->string('description',5000);
+            $table->enum('status',['enable', 'disable'])->default('disable');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class TicketCategories extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ticket_categories');
+        Schema::dropIfExists('forms');
     }
 }
