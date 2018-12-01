@@ -95,7 +95,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/country/edit/{id}', 'admin\CountryController@edit')->name('editCountry');
     Route::post('/country/store','admin\CountryController@store')->name('storeCountry');
     Route::put('/country/update/{id}','admin\CountryController@update')->name('updateCountry');
-    Route::delete('/country/delete/{country_id}', 'admin\CountryController@destroy')->name('countryDestroy');
+    Route::delete('/country/delete/{country_id}', 'admin\CountryController@destroy')->name('destroyCountry');
 
 
 // admin category URLs
@@ -103,7 +103,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/category/edit/{id}', 'admin\CategoryController@edit')->name('editCategory');
     Route::post('/category/store','admin\CategoryController@store')->name('storeCategory');
     Route::put('/category/update/{id}','admin\CategoryController@update')->name('updateCategory');
-    Route::delete('/category/delete/{category_id}', 'admin\CategoryController@destroy')->name('categoryDestroy');
+    Route::delete('/category/delete/{category_id}', 'admin\CategoryController@destroy')->name('destroyCategory');
 
 
 // admin FAQ URLs
@@ -147,6 +147,8 @@ Route::group(['prefix'=>'admin'],function(){
 // admin ticket URLs
     Route::get('/ticket','admin\TicketController@index')->name('tickets');
     Route::get('/ticket/subject/{subject_id}','admin\TicketController@ticketSubject')->name('adminTicketSubject');
+    Route::get('/ticket/create-category','admin\TicketController@createTicketCategory')->name('createTicketCategory');
+    Route::post('/ticket/store-category','admin\TicketController@storeTicketCategory')->name('storeTicketCategory');
     Route::post('/ticket/store/{subject_id}','admin\TicketController@store')->name('adminStoreTicket');
     Route::put('/ticket/change-status/{subject_id}','admin\TicketController@changeTicketStatus')->name('changeTicketStatus');
 

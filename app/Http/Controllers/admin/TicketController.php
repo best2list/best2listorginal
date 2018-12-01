@@ -130,4 +130,19 @@ class TicketController extends Controller
         $ticketSubject->save();
         return back();
     }
+
+    public function createTicketCategory()
+    {
+        $ticketCategories = TicketCategory::all();
+        return view('admin.ticket.create-category', compact('ticketCategories'));
+    }
+
+    public function storeTicketCategory(Request $request)
+    {
+        $ticketCategory = new TicketCategory;
+        $ticketCategory->name = $request->name;
+        $ticketCategory->save();
+        return back();
+    }
+
 }
