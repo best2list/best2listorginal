@@ -2,8 +2,7 @@
 
 
 
-This Website Was Created For All Businesses In The World Which Want To Be Seen.
-
+The Best Directory To Reach Farsi Speakers Of The World
 ## Basic Features
  
  
