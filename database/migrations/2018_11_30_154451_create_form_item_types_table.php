@@ -18,14 +18,6 @@ class CreateFormItemTypesTable extends Migration
 
             $table->string('name', 200);
             $table->enum('type', ['text', 'number', 'file'])->default('text');
-            $table->enum('mandatory', ['null', 'not-null'])->default('null');
-            $table->enum('duplicate', ['duplicate', 'unique'])->default('duplicate');
-            $table->enum('visibility', ['enable', 'disable', 'hidden'])->default('enable');
-            $table->enum('encrypt', ['no', 'yes'])->default('no');
-            $table->enum('initial', ['no', 'yes'])->default('no');
-            $table->enum('format', ['no', 'yes'])->default('no');
-            $table->unsignedInteger('min')->default(0);
-            $table->unsignedInteger('max');
             $table->timestamps();
         });
     }
